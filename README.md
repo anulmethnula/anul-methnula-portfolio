@@ -9,13 +9,13 @@
 
 ## Portfolio Purpose
 
-This portfolio presents my work across **Project Management, Business Analysis and digital solution delivery** in a clear, visual format for recruiters, interviewers and collaborators.
+This portfolio presents my work across **Business Analysis, Project Management and digital solution delivery** in a visual format designed for recruiters, interviewers and collaborators.
 
 ## What You’ll Find
 
-- Selected digital projects and case studies
-- Project coordination and Business Analysis work
-- Process modelling, requirements and planning examples
+- Selected business and digital projects
+- Requirements, process and workflow thinking
+- Project coordination and planning work
 - Skills, certifications and experience
 - Separate PM and BA resumes
 
@@ -31,6 +31,15 @@ This portfolio presents my work across **Project Management, Business Analysis a
 </table>
 </div>
 
+## Featured Work
+
+| Area | Example | Focus |
+|---|---|---|
+| Business systems | CAMY / ERP projects | Requirements, workflow and operations |
+| Business Analysis | Online Gas Delivery | BPMN, process analysis and wireframes |
+| Project delivery | QR E-Ticketing | Coordination, Agile and requirements |
+| Leadership | AIESEC experience | Teamwork, communication and delivery |
+
 ## Core Focus
 
 | Business Analysis | Project Management | Digital Delivery |
@@ -40,12 +49,9 @@ This portfolio presents my work across **Project Management, Business Analysis a
 | Stakeholder needs | Team communication | Technical collaboration |
 | BPMN / UML | Agile & Scrum | Continuous improvement |
 
-## Portfolio Highlights
+## Why This Portfolio Exists
 
-- **QR-Based E-Ticketing System** — project coordination, requirements and Agile delivery
-- **Online Gas Delivery System** — Business Analysis, BPMN and wireframing
-- **ERP Research / Enterprise Systems** — process and digital transformation thinking
-- **Professional experience** — coordination, documentation and stakeholder communication
+The goal is not only to show finished screens. It shows **how I understand business problems, structure requirements, communicate workflows and support digital delivery**.
 
 ## Run Locally
 
