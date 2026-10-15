@@ -1,48 +1,60 @@
-<div align="center">
+<p align="center">
+  <img src="readme-banner.svg" width="100%" alt="Anul Methnula Portfolio" />
+</p>
 
-# Anul Methnula — Portfolio
+<p align="center">
+  <a href="https://anulmethnula.vercel.app/"><img src="https://img.shields.io/badge/VIEW_LIVE_PORTFOLIO-0F172A?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/anul-methnula/"><img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+</p>
 
-**Project Management • Business Analysis • Digital Solutions**
+## Portfolio Purpose
 
-<a href="https://anulmethnula.vercel.app/">Live Portfolio</a> · <a href="https://www.linkedin.com/in/anul-methnula/">LinkedIn</a>
+This portfolio presents my work across **Project Management, Business Analysis and digital solution delivery** in a clear, visual format for recruiters, interviewers and collaborators.
 
-</div>
+## What You’ll Find
 
----
-
-## About
-
-A personal portfolio showcasing my work in **Project Management, Business Analysis, system planning and digital product development**.
-
-The portfolio includes selected projects, experience, skills, certifications and downloadable resumes.
+- Selected digital projects and case studies
+- Project coordination and Business Analysis work
+- Process modelling, requirements and planning examples
+- Skills, certifications and experience
+- Separate PM and BA resumes
 
 ## Preview
 
 <div align="center">
-  <img src="erp.png" width="31%" alt="ERP Project" />
-  <img src="aiesec1.png" width="31%" alt="AIESEC Experience" />
-  <img src="contactme.png" width="31%" alt="Contact Section" />
+<table>
+<tr>
+<td align="center"><img src="erp.png" width="260" alt="ERP project preview" /></td>
+<td align="center"><img src="aiesec1.png" width="260" alt="Leadership experience preview" /></td>
+<td align="center"><img src="contactme.png" width="260" alt="Portfolio contact section" /></td>
+</tr>
+</table>
 </div>
 
-## Highlights
+## Core Focus
 
-- Project Management and coordination
-- Business Analysis and requirements
-- Agile and Scrum practices
-- Process modelling and documentation
-- UI planning and wireframing
-- Technical project understanding
+| Business Analysis | Project Management | Digital Delivery |
+|---|---|---|
+| Requirements gathering | Planning & coordination | Solution understanding |
+| Process analysis | Milestone tracking | UI / workflow thinking |
+| Stakeholder needs | Team communication | Technical collaboration |
+| BPMN / UML | Agile & Scrum | Continuous improvement |
+
+## Portfolio Highlights
+
+- **QR-Based E-Ticketing System** — project coordination, requirements and Agile delivery
+- **Online Gas Delivery System** — Business Analysis, BPMN and wireframing
+- **ERP Research / Enterprise Systems** — process and digital transformation thinking
+- **Professional experience** — coordination, documentation and stakeholder communication
 
 ## Run Locally
 
-Open `index.html` in a browser, or host the repository using GitHub Pages / Vercel.
+The portfolio is browser based. Open `index.html` locally or host it using a static hosting service.
 
 ## Resume Files
 
-The repository contains separate resumes for **Project Management** and **Business Analysis** roles.
+This repository includes separate resumes for **Project Management** and **Business Analysis** opportunities.
 
 ---
 
-<div align="center">
-  <b>Plan clearly • Communicate well • Deliver better</b>
-</div>
+<p align="center"><b>Understand the problem → define the need → coordinate delivery → improve the result.</b></p>
