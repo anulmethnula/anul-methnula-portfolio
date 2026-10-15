@@ -17,63 +17,26 @@ jobs:
         with:
           ref: main
       - name: Append new project cards without changing existing template
+        shell: bash
         run: |
-          python3 - <<'PY'
+          python3 - <<'PYCODE'
           from pathlib import Path
-
+          import base64
           path = Path('index.html')
           text = path.read_text(encoding='utf-8-sig')
-
           if 'CAMY Entrepreneurs Digital Platform' in text:
-              print('New project cards already exist; nothing to do.')
+              print('Already added.')
               raise SystemExit(0)
-
-          marker = '''      </div>\n    </section>\n\n    <section class="experience-section" id="experience">'''
-
-          cards = '''        <div class="quest-card">
-          <div class="project-media" role="img" aria-label="CAMY entrepreneur operations platform dashboard" style="background-image:linear-gradient(135deg,rgba(4,19,27,.10),rgba(4,10,16,.24)),url('assets/projects/camy-project.webp');background-position:center;filter:none;"></div>
-          <h3>CAMY Entrepreneurs Digital Platform</h3>
-          <div class="quest-meta">TECHNOLOGY: React | PHP | MySQL<br>FOCUS: COD | Stock | Payouts | Credit</div>
-          <div class="project-role">Business Analyst</div>
-          <ul>
-            <li>Mapped entrepreneur selling, COD fulfilment, warehouse stock, payout, and credit-stock workflows into one operational platform.</li>
-            <li>Defined role-based business rules for stock reservation, profit visibility, settlements, and credit eligibility.</li>
-          </ul>
-        </div>
-        <div class="quest-card">
-          <div class="project-media" role="img" aria-label="ZEVENRA fashion commerce platform" style="background-image:linear-gradient(135deg,rgba(4,19,27,.08),rgba(4,10,16,.22)),url('assets/projects/zevenra-project.webp');background-position:center;filter:none;"></div>
-          <h3>ZEVENRA Commerce Platform</h3>
-          <div class="quest-meta">TECHNOLOGY: React | TypeScript | Vercel<br>FOCUS: Commerce | Pre-orders | Admin</div>
-          <div class="project-role">Business Analyst</div>
-          <ul>
-            <li>Mapped the customer journey from product discovery through cart, checkout, payment, and order confirmation.</li>
-            <li>Structured operational flows for product management, stock handling, pre-orders, and admin-side order control.</li>
-          </ul>
-        </div>
-        <div class="quest-card">
-          <div class="project-media" role="img" aria-label="Supun ERP operations dashboard" style="background-image:linear-gradient(135deg,rgba(4,19,27,.10),rgba(4,10,16,.24)),url('assets/projects/supun-erp-project.webp');background-position:center;filter:none;"></div>
-          <h3>Supun ERP</h3>
-          <div class="quest-meta">TECHNOLOGY: Laravel | PHP | MariaDB<br>FOCUS: Purchasing | Inventory | Sales | Receivables</div>
-          <div class="project-role">Business Analyst</div>
-          <ul>
-            <li>Connected purchasing, GRN, inventory costing, sales, receipts, and customer balances into an end-to-end ERP workflow.</li>
-            <li>Documented operational modules and data relationships to improve stock and financial traceability.</li>
-          </ul>
-        </div>
-'''
-
+          marker = '      </div>\n    </section>\n\n    <section class="experience-section" id="experience">'
+          cards = base64.b64decode('ICAgICAgICA8ZGl2IGNsYXNzPSJxdWVzdC1jYXJkIj4KICAgICAgICAgIDxkaXYgY2xhc3M9InByb2plY3QtbWVkaWEiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQ0FNWSBlbnRyZXByZW5ldXIgb3BlcmF0aW9ucyBwbGF0Zm9ybSBkYXNoYm9hcmQiIHN0eWxlPSJiYWNrZ3JvdW5kLWltYWdlOmxpbmVhci1ncmFkaWVudCgxMzVkZWcscmdiYSg0LDE5LDI3LC4xMCkscmdiYSg0LDEwLDE2LC4yNCkpLHVybCgnYXNzZXRzL3Byb2plY3RzL2NhbXktcHJvamVjdC53ZWJwJyk7YmFja2dyb3VuZC1wb3NpdGlvbjpjZW50ZXI7ZmlsdGVyOm5vbmU7Ij48L2Rpdj4KICAgICAgICAgIDxoMz5DQU1ZIEVudHJlcHJlbmV1cnMgRGlnaXRhbCBQbGF0Zm9ybTwvaDM+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJxdWVzdC1tZXRhIj5URUNITk9MT0dZOiBSZWFjdCB8IFBIUCB8IE15U1FMPGJyPkZPQ1VTOiBDT0QgfCBTdG9jayB8IFBheW91dHMgfCBDcmVkaXQ8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9InByb2plY3Qtcm9sZSI+QnVzaW5lc3MgQW5hbHlzdDwvZGl2PgogICAgICAgICAgPHVsPgogICAgICAgICAgICA8bGk+TWFwcGVkIGVudHJlcHJlbmV1ciBzZWxsaW5nLCBDT0QgZnVsZmlsbWVudCwgd2FyZWhvdXNlIHN0b2NrLCBwYXlvdXQsIGFuZCBjcmVkaXQtc3RvY2sgd29ya2Zsb3dzIGludG8gb25lIG9wZXJhdGlvbmFsIHBsYXRmb3JtLjwvbGk+CiAgICAgICAgICAgIDxsaT5EZWZpbmVkIHJvbGUtYmFzZWQgYnVzaW5lc3MgcnVsZXMgZm9yIHN0b2NrIHJlc2VydmF0aW9uLCBwcm9maXQgdmlzaWJpbGl0eSwgc2V0dGxlbWVudHMsIGFuZCBjcmVkaXQgZWxpZ2liaWxpdHkuPC9saT4KICAgICAgICAgIDwvdWw+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0icXVlc3QtY2FyZCI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJwcm9qZWN0LW1lZGlhIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlpFVkVOUkEgZmFzaGlvbiBjb21tZXJjZSBwbGF0Zm9ybSIgc3R5bGU9ImJhY2tncm91bmQtaW1hZ2U6bGluZWFyLWdyYWRpZW50KDEzNWRlZyxyZ2JhKDQsMTksMjcsLjA4KSxyZ2JhKDQsMTAsMTYsLjIyKSksdXJsKCdhc3NldHMvcHJvamVjdHMvemV2ZW5yYS1wcm9qZWN0LndlYnAnKTtiYWNrZ3JvdW5kLXBvc2l0aW9uOmNlbnRlcjtmaWx0ZXI6bm9uZTsiPjwvZGl2PgogICAgICAgICAgPGgzPlpFVkVOUkEgQ29tbWVyY2UgUGxhdGZvcm08L2gzPgogICAgICAgICAgPGRpdiBjbGFzcz0icXVlc3QtbWV0YSI+VEVDSE5PTE9HWTogUmVhY3QgfCBUeXBlU2NyaXB0IHwgVmVyY2VsPGJyPkZPQ1VTOiBDb21tZXJjZSB8IFByZS1vcmRlcnMgfCBBZG1pbjwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0icHJvamVjdC1yb2xlIj5CdXNpbmVzcyBBbmFseXN0PC9kaXY+CiAgICAgICAgICA8dWw+CiAgICAgICAgICAgIDxsaT5NYXBwZWQgdGhlIGN1c3RvbWVyIGpvdXJuZXkgZnJvbSBwcm9kdWN0IGRpc2NvdmVyeSB0aHJvdWdoIGNhcnQsIGNoZWNrb3V0LCBwYXltZW50LCBhbmQgb3JkZXIgY29uZmlybWF0aW9uLjwvbGk+CiAgICAgICAgICAgIDxsaT5TdHJ1Y3R1cmVkIG9wZXJhdGlvbmFsIGZsb3dzIGZvciBwcm9kdWN0IG1hbmFnZW1lbnQsIHN0b2NrIGhhbmRsaW5nLCBwcmUtb3JkZXJzLCBhbmQgYWRtaW4tc2lkZSBvcmRlciBjb250cm9sLjwvbGk+CiAgICAgICAgICA8L3VsPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9InF1ZXN0LWNhcmQiPgogICAgICAgICAgPGRpdiBjbGFzcz0icHJvamVjdC1tZWRpYSIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJTdXB1biBFUlAgb3BlcmF0aW9ucyBkYXNoYm9hcmQiIHN0eWxlPSJiYWNrZ3JvdW5kLWltYWdlOmxpbmVhci1ncmFkaWVudCgxMzVkZWcscmdiYSg0LDE5LDI3LC4xMCkscmdiYSg0LDEwLDE2LC4yNCkpLHVybCgnYXNzZXRzL3Byb2plY3RzL3N1cHVuLWVycC1wcm9qZWN0LndlYnAnKTtiYWNrZ3JvdW5kLXBvc2l0aW9uOmNlbnRlcjtmaWx0ZXI6bm9uZTsiPjwvZGl2PgogICAgICAgICAgPGgzPlN1cHVuIEVSUDwvaDM+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJxdWVzdC1tZXRhIj5URUNITk9MT0dZOiBMYXJhdmVsIHwgUEhQIHwgTWFyaWFEQjxicj5GT0NVUzogUHVyY2hhc2luZyB8IEludmVudG9yeSB8IFNhbGVzIHwgUmVjZWl2YWJsZXM8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9InByb2plY3Qtcm9sZSI+QnVzaW5lc3MgQW5hbHlzdDwvZGl2PgogICAgICAgICAgPHVsPgogICAgICAgICAgICA8bGk+Q29ubmVjdGVkIHB1cmNoYXNpbmcsIEdSTiwgaW52ZW50b3J5IGNvc3RpbmcsIHNhbGVzLCByZWNlaXB0cywgYW5kIGN1c3RvbWVyIGJhbGFuY2VzIGludG8gYW4gZW5kLXRvLWVuZCBFUlAgd29ya2Zsb3cuPC9saT4KICAgICAgICAgICAgPGxpPkRvY3VtZW50ZWQgb3BlcmF0aW9uYWwgbW9kdWxlcyBhbmQgZGF0YSByZWxhdGlvbnNoaXBzIHRvIGltcHJvdmUgc3RvY2sgYW5kIGZpbmFuY2lhbCB0cmFjZWFiaWxpdHkuPC9saT4KICAgICAgICAgIDwvdWw+CiAgICAgICAgPC9kaXY+Cg==').decode('utf-8')
           if marker not in text:
-              raise SystemExit('Expected project-section marker was not found; no file changed.')
-
-          text = text.replace(marker, cards + marker, 1)
-          path.write_text(text, encoding='utf-8')
-          PY
+              raise SystemExit('Project marker not found; no changes made.')
+          path.write_text(text.replace(marker, cards + marker, 1), encoding='utf-8')
+          PYCODE
       - name: Commit project additions
+        shell: bash
         run: |
-          if git diff --quiet -- index.html; then
-            echo "No project changes to commit."
-            exit 0
-          fi
+          if git diff --quiet -- index.html; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
