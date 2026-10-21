@@ -1477,8 +1477,6 @@
   <div class="vignette"></div>
 </div>
 
-<div class="wipe" id="wipe"></div>
-
 <div class="shell">
   <div class="topbar">
     <a class="logo" href="#home" aria-label="Anul Methnula — home"><span class="crest" aria-hidden="true">AM</span><span class="logo-name" aria-hidden="true"><span class="logo-word">ANUL</span><span class="logo-word">METHNULA</span></span></a>
@@ -1498,16 +1496,6 @@
     </button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav"><span class="nav-toggle-lines" aria-hidden="true"></span></button>
     <div class="nav-progress" aria-hidden="true"><span id="navProgress"></span></div>
-    <div class="class-select">
-      <button class="class-btn pm-btn active" id="btnPM" type="button" aria-pressed="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-        PROJECT MANAGER
-      </button>
-      <button class="class-btn ba-btn" id="btnBA" type="button" aria-pressed="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-4"/></svg>
-        BUSINESS ANALYST
-      </button>
-    </div>
   </div>
 
   <nav class="connect-rail" aria-label="Contact links">
@@ -1554,13 +1542,12 @@
     </button>
   </aside>
 
-  <!-- ================= PM PAGE ================= -->
+  <!-- ================= PORTFOLIO PAGE ================= -->
   <main class="page active" id="page-pm">
     <section class="hero" id="home" style="border-top:none; padding-top:10px;">
       <div class="hero-copy">
         <div class="status-tags" aria-label="Current professional roles">
-          <div class="rank-tag"><span class="pulse"></span>BUSINESS ANALYST INTERN</div>
-          <div class="rank-tag"><span class="pulse"></span>ASPIRING PROJECT MANAGER</div>
+          <div class="rank-tag"><span class="pulse"></span>Business Analyst | Project Manager</div>
         </div>
         <div class="hero-intro">Hi, I&rsquo;m</div>
         <h1><span>ANUL</span><span class="glow">METHNULA</span></h1>
@@ -1696,7 +1683,7 @@
         <div class="experience-content">
           <span class="experience-label">INDUSTRY ROLE</span>
           <span class="experience-date">August 2026 &ndash; Present</span>
-          <h3>Business Analyst Intern</h3>
+          <h3>Business Analyst</h3>
           <p class="experience-company">Supun Group of Companies · Sri Lanka</p>
           <ul>
             <li>Gather and analyze business requirements across departments.</li>
@@ -1816,14 +1803,10 @@
 
 <script>
   const root = document.documentElement;
-  const wipe = document.getElementById('wipe');
-  const btnPM = document.getElementById('btnPM');
-  const btnBA = document.getElementById('btnBA');
   const pagePM = document.getElementById('page-pm');
   const connectRail = document.querySelector('.connect-rail');
   const connectCv = document.getElementById('connectCv');
-  let current = 'pm';
-  let animating = false;
+  const current = 'pm';
 
   function syncConnectCv(role){
     const file = 'Anul Methnula- BA Resume.pdf';
@@ -1878,54 +1861,6 @@
       root.style.setProperty('--accent', getComputedStyle(root).getPropertyValue('--ba'));
     }
   }
-
-  function applyRole(role){
-    btnPM.classList.toggle('active', role==='pm');
-    btnBA.classList.toggle('active', role==='ba');
-    btnPM.setAttribute('aria-pressed', String(role==='pm'));
-    btnBA.setAttribute('aria-pressed', String(role==='ba'));
-    setTheme(role);
-    syncConnectCv(role);
-    observeRoleHero(role);
-    current = role;
-    pagePM.dataset.role = role;
-    fillBars(pagePM);
-  }
-
-  function switchTo(role){
-    if(animating || role===current) return;
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      applyRole(role);
-      return;
-    }
-    animating = true;
-    applyRole(role);
-    wipe.style.background = role==='pm' ? 'var(--pm)' : 'var(--ba)';
-    wipe.classList.add('in');
-    let entered = false;
-    function onIn(){
-      if(entered) return;
-      entered = true;
-      wipe.removeEventListener('animationend', onIn);
-      wipe.classList.remove('in');
-      wipe.classList.add('out');
-      let exited = false;
-      function onOut(){
-        if(exited) return;
-        exited = true;
-        wipe.removeEventListener('animationend', onOut);
-        wipe.classList.remove('out');
-        animating = false;
-      }
-      wipe.addEventListener('animationend', onOut);
-      setTimeout(onOut, 450);
-    }
-    wipe.addEventListener('animationend', onIn);
-    setTimeout(onIn, 450);
-  }
-
-  btnPM.addEventListener('click', ()=>switchTo('pm'));
-  btnBA.addEventListener('click', ()=>switchTo('ba'));
 
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
@@ -2208,18 +2143,18 @@
     if(/\b(queue|scrum project)\b/.test(q)) return chatAnswer('Queue Management System','An Agile/Scrum project where Anul supported sprint planning, planning poker, daily scrums, milestone tracking, epics, requirements, blocker management, and documentation. <a href="#projects-pm">View project work</a>.');
     if(/\b(hotel|booking system)\b/.test(q)) return chatAnswer('Hotel Management System','Anul modeled booking and administration requirements with use-case, class, sequence, and ER diagrams for a web and MySQL solution. <a href="#projects-pm">View project work</a>.');
     if(/\b(feedback|resident|guest)\b/.test(q)) return chatAnswer('Guest &amp; Resident Feedback System','Anul defined functional and non-functional requirements, feedback/dashboard flows, data models, APIs, acceptance criteria, and urgent-rating alerts. <a href="#projects-pm">View project work</a>.');
-    if(/\b(erp|sap|netsuite|oracle)\b/.test(q)) return chatAnswer('ERP knowledge','Anul supports ERP planning in his current BA internship and has completed comparative analysis involving SAP S/4HANA and Oracle NetSuite. His strengths include requirements, process mapping, stakeholder coordination, and business-to-technical communication.');
+    if(/\b(erp|sap|netsuite|oracle)\b/.test(q)) return chatAnswer('ERP knowledge','Anul supports ERP planning in his current Business Analyst role and has completed comparative analysis involving SAP S/4HANA and Oracle NetSuite. His strengths include requirements, process mapping, stakeholder coordination, and business-to-technical communication.');
     if(/\b(skills?|expertise|capabilit(?:y|ies)|strengths?|technolog(?:y|ies)|tools?)\b/.test(q) || /what can (anul|he) do/.test(q)) return chatAnswer('BA &amp; PM strengths','<ul><li>Business analysis and requirements</li><li>Process mapping and documentation</li><li>Stakeholder communication</li><li>Agile, planning, UAT, and delivery support</li></ul><p><strong>Main tools:</strong> Jira, Confluence, Microsoft Project, Trello, Draw.io, Figma, Excel, Power BI, SQL, and SAP S/4HANA.</p>');
     if(/\b(projects?|portfolio|built|work samples?|case studies?)\b/.test(q)) return chatAnswer('Featured projects','<p>Anul’s work covers ticketing, delivery, queue management, feedback, hotel management, and ERP analysis.</p><ul><li>Requirements and process modeling</li><li>Project planning and coordination</li><li>Acceptance criteria and delivery documentation</li></ul><p><a href="#projects-pm">Explore all projects</a></p>');
     if(/\b(leadership|aiesec|ocvp|team lead|career fair|blood donation|christmas oem)\b/.test(q)) return chatAnswer('Leadership — AIESEC','<ul><li>OCVP Logistics — Elevate 26 Career Fair</li><li>OCVP Partnership Development — Christmas OEM</li><li>OGT B2C Team Lead — Term 26.27</li><li>OC Member, PR — Blood Donation Drive</li></ul><p><a href="#leadership">View leadership experience</a></p>');
     if(/\b(challenge|game|project rescue|mini-game|prioriti[sz])\b/.test(q)) return chatAnswer('Project Rescue challenge','A 30-second BA/PM prioritization game with randomized project situations. Classify each item as Critical, Important, or Backlog and test your delivery judgment. <a href="#project-rescue">Play Project Rescue</a>.');
-    if(/\b(experiences?|internship|intern|supun|employment|industry|roles?|job)\b/.test(q)) return chatAnswer('Professional experience','<p><strong>Business Analyst Intern</strong><br>Supun Group of Companies, Sri Lanka<br>August 2026–Present</p><ul><li>Requirements and process analysis</li><li>Workflow and functional documentation</li><li>ERP planning and team communication</li></ul><p><a href="#experience">View experience</a></p>');
+    if(/\b(experiences?|internship|intern|supun|employment|industry|roles?|job)\b/.test(q)) return chatAnswer('Professional experience','<p><strong>Business Analyst</strong><br>Supun Group of Companies, Sri Lanka<br>August 2026–Present</p><ul><li>Requirements and process analysis</li><li>Workflow and functional documentation</li><li>ERP planning and team communication</li></ul><p><a href="#experience">View experience</a></p>');
     if(/\b(education|degrees?|study|studies|academic|university|nibm|coventry|hnd|diploma)\b/.test(q)) return chatAnswer('Education','<ul><li>BSc (Hons) IT for Business — in progress</li><li>HND in Information Systems</li><li>Diploma in Software Engineering</li><li>Certificate in Computer Science</li></ul><p>Coventry University through NIBM. <a href="#education">View education</a></p>');
     if(/\b(certifications?|certificates?|aws|leanpm|english course|british council)\b/.test(q)) return chatAnswer('Certifications','<ul><li>Cloud 101 — AWS</li><li>LeanPM Yellow Belt</li><li>Certificate in Computer Science</li><li>English qualifications and courses</li></ul><p><a href="#certifications">View certifications</a></p>');
     if(/\b(cv|cvs|resumes?|download)\b/.test(q)) return chatAnswer('Download Anul’s CV','Download the updated <a href="Anul%20Methnula-%20BA%20Resume.pdf" download="Anul Methnula - Business Analyst Resume.pdf">Business Analyst CV</a>.');
     if(/\b(available|availability|start|opportunit(?:y|ies)|hire|recruit)\b/.test(q)) return chatAnswer('Open to opportunities','Anul is open to suitable <strong>Business Analyst, Project Coordinator, and junior Project Management opportunities</strong>. <a href="#contact">Contact Anul</a> to discuss a role.');
     if(/\b(contact|email|phone|call|whatsapp|linkedin|reach|location)\b/.test(q)) return chatAnswer('Contact Anul','Email <a href="mailto:anulmethnula@gmail.com">anulmethnula@gmail.com</a>, call <a href="tel:+94740529061">+94 740 529 061</a>, message through <a href="https://wa.me/94740529061" target="_blank" rel="noopener noreferrer">WhatsApp</a>, or connect on <a href="https://www.linkedin.com/in/anul-methnula/" target="_blank" rel="noopener noreferrer">LinkedIn</a>. He is based in Sri Lanka.');
-    if((/\b(who|about|profile|tell me)\b/.test(q) && /\b(anuls?|him|candidate)\b/.test(q)) || /^(tell me )?about me$|who am i|tell me about myself/.test(q) || /why (hire|choose) (anul|him)/.test(q)) return chatAnswer('About Anul Methnula','<p>Anul is a <strong>Business Analyst Intern</strong> and aspiring <strong>Project Manager</strong> based in Sri Lanka. He turns business needs into clear requirements, practical plans, and coordinated digital solutions.</p><p><strong>What he brings</strong></p><ul><li>Requirements gathering and process analysis</li><li>Stakeholder communication and documentation</li><li>Agile planning, coordination, UAT, and delivery support</li><li>Industry experience, project work, and AIESEC leadership</li></ul><p>He currently works with <strong>Supun Group of Companies</strong> and is open to suitable BA, project coordination, and junior PM opportunities. <a href="#contact">Contact Anul</a></p>');
+    if((/\b(who|about|profile|tell me)\b/.test(q) && /\b(anuls?|him|candidate)\b/.test(q)) || /^(tell me )?about me$|who am i|tell me about myself/.test(q) || /why (hire|choose) (anul|him)/.test(q)) return chatAnswer('About Anul Methnula','<p>Anul is a <strong>Business Analyst</strong> and <strong>Project Manager</strong> based in Sri Lanka. He turns business needs into clear requirements, practical plans, and coordinated digital solutions.</p><p><strong>What he brings</strong></p><ul><li>Requirements gathering and process analysis</li><li>Stakeholder communication and documentation</li><li>Agile planning, coordination, UAT, and delivery support</li><li>Industry experience, project work, and AIESEC leadership</li></ul><p>He currently works with <strong>Supun Group of Companies</strong> and is open to suitable BA, project coordination, and junior PM opportunities. <a href="#contact">Contact Anul</a></p>');
     if(/\b(ai|bot|assistant|human|real person)\b/.test(q) || /what can you do/.test(q)) return chatAnswer('How I can help','<ul><li>Verified answers about Anul’s portfolio</li><li>Concise general-knowledge lookups</li><li>A visible source for factual lookup answers</li></ul><p>Everything stays inside this chat—no account or external sign-in is required.</p>');
     if(/\b(thank|thanks|cheers)\b/.test(q)) return 'You’re welcome! I can also show you Anul’s projects, CVs, or direct contact details.';
     return chatAnswer('I don’t have a verified answer for that yet.','Try asking about Anul’s skills, projects, experience, leadership, education, certifications, CV, availability, or contact details—or <a href="#contact">ask Anul directly</a>.');
