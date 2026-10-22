@@ -3543,41 +3543,131 @@
   }
   #home,#skills,#projects-pm,#experience,#leadership,#education,#certifications,#project-rescue,#contact{ scroll-margin-top:110px; }
 
-  /* Contact/footer spacing and portrait framing. */
+  /* Premium contact close and compact footer. */
   .page > section.contact-final{
-    padding-top:clamp(88px,7vw,104px) !important;
-    padding-bottom:38px !important;
+    padding:clamp(96px,8vw,118px) clamp(24px,6vw,92px) 52px !important;
     scroll-margin-top:96px;
+    background:
+      radial-gradient(circle at 12% 18%,rgba(201,107,50,.09),transparent 30%),
+      radial-gradient(circle at 86% 72%,rgba(92,111,103,.06),transparent 32%),
+      linear-gradient(135deg,#0c0f10 0%,#111517 52%,#0b0e0f 100%) !important;
   }
-  .contact-final-inner{ min-height:520px; }
-  .contact-final-portrait{
-    align-self:center;
-    aspect-ratio:1;
+  .page > section.contact-final::before{
+    right:-8%;
+    bottom:-42%;
+    width:min(48vw,620px);
+    background:radial-gradient(circle,rgba(201,107,50,.08),transparent 66%);
+  }
+  .contact-final-inner{
+    grid-template-columns:minmax(0,1fr) minmax(390px,.9fr);
+    align-items:center;
+    gap:clamp(42px,5vw,72px);
+    max-width:1200px;
     min-height:0;
+  }
+  .contact-final-copy{ max-width:650px; }
+  .contact-final-eyebrow{
+    margin-bottom:18px;
+    color:#c96b32;
+    font-size:.72rem;
+    letter-spacing:.13em !important;
+  }
+  .contact-final-eyebrow::before{ width:28px; background:#c96b32; }
+  .page > section.contact-final h2{
+    max-width:650px;
+    margin-bottom:22px;
+    color:#f2eee8;
+    font-size:clamp(3rem,4.7vw,4.65rem) !important;
+    line-height:.98;
+    letter-spacing:-.045em !important;
+  }
+  .contact-final h2 span{ display:inline; }
+  .contact-final h2 .contact-final-accent{ color:#c96b32; }
+  .contact-final h2 span.contact-final-accent:first-child{ color:#c96b32; }
+  .contact-final-description{
+    max-width:610px;
+    margin-bottom:26px;
+    color:#b9b4ac;
+    font-size:clamp(1rem,1.1vw,1.12rem);
+    line-height:1.65;
+  }
+  .contact-final-description span{ display:inline; }
+  .contact-final-actions{ gap:12px; margin-bottom:26px; }
+  .contact-final-btn{ min-height:48px; border-radius:10px; }
+  .contact-final-btn.primary{ border-color:#c96b32; background:#c96b32; color:#151719; }
+  .contact-final-btn.secondary{ border-color:rgba(242,238,232,.18); background:rgba(255,255,255,.035); color:#f2eee8; }
+  .contact-final-btn.primary:hover,.contact-final-btn.secondary:hover{ transform:translateY(-2px); }
+  .contact-final-note{ display:none; }
+  .contact-final-details{ max-width:560px; border-color:rgba(242,238,232,.1); }
+  .contact-final-detail{ padding-block:14px; }
+  .contact-final-detail + .contact-final-detail{ border-color:rgba(242,238,232,.1); }
+  .contact-final-detail small{ color:#c96b32; }
+  .contact-final-detail a,.contact-final-detail span{ color:#ded9d2; }
+  .contact-final-portrait{
+    position:relative;
+    align-self:center;
+    width:100%;
+    aspect-ratio:4 / 3;
+    min-height:0;
+    overflow:hidden;
+    border:1px solid rgba(201,107,50,.18);
+    border-radius:22px;
+    background:#0d1112;
+    box-shadow:0 20px 48px rgba(0,0,0,.24);
   }
   .contact-final-portrait img{
     height:100%;
     min-height:0;
     object-fit:cover;
-    object-position:50% 32%;
+    object-position:78% center;
+    filter:contrast(1.02) saturate(.88) brightness(.9);
   }
-  .portfolio-footer-inner{ min-height:88px; }
+  .contact-final-portrait::after{
+    background:
+      linear-gradient(90deg,#101415 0%,rgba(16,20,21,.54) 13%,transparent 36%),
+      linear-gradient(0deg,rgba(10,13,14,.52),transparent 25%);
+  }
+  .portfolio-footer{ padding-inline:clamp(20px,5vw,68px); background:#090c0d; }
+  .portfolio-footer-inner{
+    grid-template-columns:auto 1fr auto;
+    gap:clamp(18px,3vw,38px);
+    min-height:76px;
+    border-top-color:rgba(242,238,232,.1);
+  }
+  .footer-positioning{ justify-self:center; }
+  .footer-details{ gap:10px; }
   @media (max-width:760px){
     .page > section.contact-final{
-      padding:84px 20px 0 !important;
+      padding:88px 18px 28px !important;
       scroll-margin-top:82px;
     }
-    .contact-final-inner{ gap:26px; min-height:0; }
+    .contact-final-inner{ grid-template-columns:1fr; gap:32px; min-height:0; }
+    .page > section.contact-final h2{ font-size:clamp(2.65rem,12vw,3.55rem) !important; line-height:1; }
+    .contact-final-actions{ display:grid; grid-template-columns:1fr; }
+    .contact-final-details{ flex-direction:column; }
+    .contact-final-detail{ width:100%; min-width:0; padding:13px 0; }
+    .contact-final-detail + .contact-final-detail{ padding-left:0; border-top:1px solid rgba(242,238,232,.1); border-left:0; }
     .contact-final-portrait{
+      width:100%;
       height:auto;
+      margin:0;
       max-height:none;
-      aspect-ratio:1;
+      aspect-ratio:4 / 3;
+      border-radius:18px;
     }
-    .contact-final-portrait img{ object-position:50% 28%; }
-    .portfolio-footer-inner{ padding:24px 0 calc(64px + env(safe-area-inset-bottom)); }
+    .contact-final-portrait img{ object-position:78% center; }
+    .portfolio-footer-inner{
+      grid-template-columns:1fr;
+      gap:10px;
+      min-height:0;
+      padding:22px 0 calc(82px + env(safe-area-inset-bottom));
+      text-align:center;
+    }
+    .footer-copy,.footer-positioning,.footer-details{ justify-self:center; }
+    .footer-details{ justify-content:center; }
   }
   @media (max-width:400px){
-    .page > section.contact-final{ padding-top:80px !important; padding-inline:16px !important; }
+    .page > section.contact-final{ padding-top:84px !important; padding-inline:15px !important; }
   }
 </style>
 </head>
@@ -3943,14 +4033,13 @@
     <section class="contact-final reveal" id="contact" aria-labelledby="contact-final-pm-title">
       <div class="contact-final-inner">
         <div class="contact-final-copy">
-          <div class="contact-final-eyebrow">08 &mdash; LET&rsquo;S CONNECT</div>
-          <h2 id="contact-final-pm-title"><span>LET&rsquo;S</span><span class="contact-final-accent">WORK TOGETHER.</span></h2>
-          <p class="contact-final-description"><span>Have an opportunity, project, or idea in mind?</span> <span>I&rsquo;m always open to discussing Business Analysis, Project Management, and digital transformation opportunities.</span></p>
+          <div class="contact-final-eyebrow">LET&rsquo;S CONNECT</div>
+          <h2 id="contact-final-pm-title">Let&rsquo;s build something <span class="contact-final-accent">meaningful.</span></h2>
+          <p class="contact-final-description">I&rsquo;m open to Business Analysis, Project Management, software projects, and thoughtful collaborations that turn complex ideas into practical outcomes.</p>
           <div class="contact-final-actions">
             <a class="contact-final-btn primary" href="https://wa.me/94740529061?text=Hi%20Anul%2C%20I%27d%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer" aria-label="Get in touch with Anul on WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>Get In Touch <span aria-hidden="true">&rarr;</span></a>
             <a class="contact-final-btn secondary" href="https://www.linkedin.com/in/anul-methnula/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn <span aria-hidden="true">&nearr;</span></a>
           </div>
-          <p class="contact-final-note">Open to opportunities &bull; Collaboration &bull; New ideas</p>
           <div class="contact-final-details">
             <div class="contact-final-detail"><small>EMAIL</small><a href="mailto:anulmethnula@gmail.com">anulmethnula@gmail.com</a></div>
             <div class="contact-final-detail"><small>LOCATION</small><span>Sri Lanka</span></div>
