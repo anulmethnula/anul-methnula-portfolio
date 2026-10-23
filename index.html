@@ -3847,6 +3847,64 @@
   @media (max-width:400px){
     .page > section.contact-final{ padding-top:84px !important; padding-inline:15px !important; }
   }
+
+  /* Cinematic, full-bleed pre-footer CTA. */
+  .page > section.contact-final{
+    position:relative; isolation:isolate; display:flex; align-items:center;
+    min-height:clamp(500px,42vw,580px);
+    padding:clamp(64px,7vw,92px) clamp(24px,8vw,128px) !important;
+    overflow:hidden; border:0 !important; background:#080b0d !important;
+  }
+  .page > section.contact-final::before{
+    content:""; position:absolute; z-index:-1; inset:0; width:auto; height:auto;
+    background:linear-gradient(90deg,rgba(6,9,11,.98) 0%,rgba(6,9,11,.92) 35%,rgba(6,9,11,.64) 55%,rgba(6,9,11,.2) 76%,rgba(6,9,11,.08) 100%),linear-gradient(0deg,rgba(6,9,11,.32),transparent 38%,rgba(6,9,11,.12));
+    pointer-events:none;
+  }
+  .contact-final-inner{ position:static; display:block; width:100%; max-width:1440px; min-height:0; margin:0 auto; }
+  .contact-final-copy{ position:relative; z-index:1; width:min(620px,52vw); max-width:620px; padding:0; border:0; border-radius:0; background:none; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; }
+  .contact-final-eyebrow{ margin:0 0 20px; color:#d6773c; font-size:.75rem; font-weight:700 !important; letter-spacing:.14em !important; }
+  .contact-final-eyebrow::before{ width:32px; background:#d6773c; }
+  .page > section.contact-final h2{ max-width:620px; margin:0 0 22px; color:#f4efe7; font-size:clamp(2.8rem,4.4vw,4.25rem) !important; line-height:1.02; letter-spacing:-.045em !important; }
+  .contact-final h2 span,.contact-final h2 .contact-final-accent{ display:inline; color:inherit; }
+  .contact-final-description{ max-width:590px; margin:0 0 28px; color:#d4cec5; font-size:clamp(1rem,1.15vw,1.13rem); line-height:1.65; }
+  .contact-final-actions{ display:flex; flex-wrap:wrap; gap:12px; margin:0 0 20px; }
+  .contact-final-btn{ min-height:50px; padding:0 21px; border-radius:9px; transition:transform .24s ease,background-color .24s ease,border-color .24s ease,color .24s ease,box-shadow .24s ease; }
+  .contact-final-btn.primary{ border-color:#c96b32; background:#c96b32; color:#151719; box-shadow:0 10px 26px rgba(201,107,50,.2); }
+  .contact-final-btn.secondary{ border-color:rgba(244,239,231,.38); background:rgba(8,11,13,.28); color:#f4efe7; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+  .contact-final-btn.primary:hover{ transform:translateY(-3px); background:#da7a3e; border-color:#da7a3e; box-shadow:0 14px 32px rgba(201,107,50,.3); }
+  .contact-final-btn.secondary:hover{ transform:translateY(-3px); border-color:#d6773c; background:rgba(201,107,50,.12); color:#fff7ef; }
+  .contact-final-note{ display:block; margin:0; color:#aaa49b; font-size:.78rem; line-height:1.5; letter-spacing:.035em; }
+  .contact-final-details{ display:none; }
+  .contact-final-portrait{ position:absolute; z-index:-2; inset:0; display:block; width:100%; height:100%; min-height:0; margin:0; overflow:hidden; border:0; border-radius:0; background:#080b0d; box-shadow:none; }
+  .contact-final-portrait img{ display:block; width:100%; height:100%; min-height:0; object-fit:cover; object-position:center center; filter:contrast(1.02) saturate(.92) brightness(.88); transform:scale(1.012); transition:transform 8s cubic-bezier(.2,.7,.2,1); }
+  .contact-final.in .contact-final-portrait img{ transform:scale(1.035); }
+  .contact-final-portrait::after{ display:none; }
+  .contact-final.in .contact-final-copy{ animation:contactCopyIn .72s cubic-bezier(.2,.75,.25,1) both; }
+  .contact-final.in .contact-final-portrait{ animation:contactPortraitIn .8s ease both; }
+  .portfolio-chat{ transition:opacity .22s ease,visibility .22s ease,transform .22s ease; }
+  .portfolio-chat.is-near-footer{ opacity:0; visibility:hidden; pointer-events:none; transform:translateY(14px); }
+  @media (max-width:760px){
+    .page > section.contact-final{ min-height:600px; align-items:flex-start; padding:64px 20px 70px !important; }
+    .page > section.contact-final::before{ background:linear-gradient(90deg,rgba(6,9,11,.97) 0%,rgba(6,9,11,.89) 54%,rgba(6,9,11,.46) 100%),linear-gradient(0deg,rgba(6,9,11,.78) 0%,rgba(6,9,11,.18) 48%,rgba(6,9,11,.2) 100%); }
+    .contact-final-copy{ width:100%; max-width:540px; }
+    .page > section.contact-final h2{ max-width:12ch; font-size:clamp(2.45rem,11vw,3.25rem) !important; }
+    .contact-final-description{ max-width:34rem; font-size:1rem; }
+    .contact-final-actions{ display:grid; grid-template-columns:1fr; width:min(100%,330px); }
+    .contact-final-btn{ width:100%; min-height:52px; }
+    .contact-final-portrait{ width:100%; height:100%; margin:0; border-radius:0; }
+    .contact-final-portrait img{ object-position:58% center; }
+  }
+  @media (max-width:430px){
+    .page > section.contact-final{ min-height:640px; padding:58px 17px 74px !important; }
+    .page > section.contact-final::before{ background:linear-gradient(90deg,rgba(6,9,11,.98) 0%,rgba(6,9,11,.91) 60%,rgba(6,9,11,.54) 100%),linear-gradient(0deg,rgba(6,9,11,.84) 0%,rgba(6,9,11,.2) 52%,rgba(6,9,11,.24) 100%); }
+    .contact-final-portrait img{ object-position:58% center; }
+    .contact-final-note{ max-width:280px; font-size:.72rem; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .contact-final.in .contact-final-copy,.contact-final.in .contact-final-portrait{ animation:none; }
+    .contact-final-portrait img,.contact-final.in .contact-final-portrait img{ transform:none; transition:none; }
+    .contact-final-btn,.portfolio-chat{ transition:none; }
+  }
 </style>
 </head>
 <body>
@@ -4207,15 +4265,12 @@
         <div class="contact-final-copy">
           <div class="contact-final-eyebrow">LET&rsquo;S CONNECT</div>
           <h2 id="contact-final-pm-title">Let&rsquo;s build something <span class="contact-final-accent">meaningful.</span></h2>
-          <p class="contact-final-description">I&rsquo;m open to Business Analysis, Project Management, software projects, and thoughtful collaborations that turn complex ideas into practical outcomes.</p>
+          <p class="contact-final-description">Open to Business Analysis, Project Management, software projects, and thoughtful collaborations.</p>
           <div class="contact-final-actions">
             <a class="contact-final-btn primary" href="https://wa.me/94740529061?text=Hi%20Anul%2C%20I%27d%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer" aria-label="Get in touch with Anul on WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>Get In Touch <span aria-hidden="true">&rarr;</span></a>
             <a class="contact-final-btn secondary" href="https://www.linkedin.com/in/anul-methnula/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn <span aria-hidden="true">&nearr;</span></a>
           </div>
-          <div class="contact-final-details">
-            <div class="contact-final-detail"><small>EMAIL</small><a href="mailto:anulmethnula@gmail.com">anulmethnula@gmail.com</a></div>
-            <div class="contact-final-detail"><small>LOCATION</small><span>Sri Lanka</span></div>
-          </div>
+          <p class="contact-final-note">Business Analysis &bull; Project Management &bull; Software Development</p>
         </div>
         <figure class="contact-final-portrait"><img src="assets/images/contact-portrait-gold.png" width="1672" height="941" alt="Anul Methnula wearing gold-frame glasses and holding a laptop in a modern office" loading="lazy"></figure>
       </div>
@@ -4777,6 +4832,16 @@
   footerScrollTop.addEventListener('click',()=>{
     window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
   });
+
+  // Keep the assistant clear of the closing CTA and footer.
+  const contactFinal=document.getElementById('contact');
+  const portfolioFooter=document.querySelector('.portfolio-footer');
+  const chatClearanceObserver=new IntersectionObserver(entries=>{
+    const closingAreaVisible=entries.some(entry=>entry.isIntersecting) ||
+      [contactFinal,portfolioFooter].some(element=>element?.getBoundingClientRect().top<window.innerHeight && element.getBoundingClientRect().bottom>0);
+    portfolioChat.classList.toggle('is-near-footer',closingAreaVisible);
+  },{threshold:0,rootMargin:'0px 0px 24px 0px'});
+  [contactFinal,portfolioFooter].forEach(element=>element&&chatClearanceObserver.observe(element));
 
   // Project Rescue: browser-only BA/PM prioritization simulator.
   const rescueScenarios = [
