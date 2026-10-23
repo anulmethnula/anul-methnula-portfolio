@@ -691,6 +691,7 @@
     transition:transform .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease;
   }
   .connect-link i{ font-size:1.05rem; }
+  .connect-link svg{ display:block; width:20px; height:20px; color:var(--brand); fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
   .connect-link::after{
     content:attr(data-tooltip); position:absolute; top:50%; right:calc(100% + 10px);
     padding:6px 9px; border:1px solid rgba(255,255,255,.12); border-radius:7px;
@@ -1948,25 +1949,60 @@
   /* Certifications: warm, high-contrast treatment over the moving certificate collage. */
   .certifications-section{
     background-color:#161a1c;
-    background-image:linear-gradient(110deg,rgba(12,15,16,.6),rgba(12,15,16,.56) 48%,rgba(12,15,16,.6)),url("cer1.png") !important;
-    background-size:cover,108%;
-    background-position:center;
-    background-blend-mode:normal,luminosity;
-    animation-duration:24s;
-  }
-  .certifications-section::before,.certifications-section::after{
-    opacity:.34;
-    border-color:rgba(205,153,118,.16);
-    filter:blur(1.8px) saturate(.56) contrast(.94) brightness(.74);
-    box-shadow:0 14px 32px rgba(0,0,0,.2);
+    background-image:none !important;
+    animation:none;
   }
   .certifications-section::before{
-    background-image:linear-gradient(rgba(12,15,16,.32),rgba(12,15,16,.48)),url("cer2.png");
-    animation-duration:14s;
+    content:"";
+    position:absolute;
+    z-index:-1;
+    inset:0;
+    width:auto;
+    height:auto;
+    border:0;
+    border-radius:0;
+    background:rgba(9,12,14,.36);
+    opacity:1;
+    filter:none;
+    box-shadow:none;
+    transform:none;
+    animation:none;
+    pointer-events:none;
   }
-  .certifications-section::after{
-    background-image:linear-gradient(rgba(12,15,16,.32),rgba(12,15,16,.48)),url("cer3.png");
-    animation-duration:16s;
+  .certifications-section::after{ display:none; }
+  .cert-backdrop{
+    position:absolute;
+    z-index:-2;
+    inset:0;
+    overflow:hidden;
+    background:#161a1c;
+    pointer-events:none;
+  }
+  .cert-backdrop img{
+    position:absolute;
+    display:block;
+    width:46%;
+    height:82%;
+    object-fit:contain;
+    object-position:center;
+    opacity:.68;
+    filter:blur(.7px) saturate(.9) contrast(1.08) brightness(.84);
+    will-change:opacity,transform;
+  }
+  .cert-backdrop img:nth-child(1){ left:-6%; top:12%; transform:rotate(-6deg); animation:certCollageLeft 3.8s ease-in-out infinite alternate; }
+  .cert-backdrop img:nth-child(2){ left:27%; top:-10%; height:96%; transform:rotate(-1deg); animation:certCollageCenter 3.6s .18s ease-in-out infinite alternate; }
+  .cert-backdrop img:nth-child(3){ right:-6%; top:11%; transform:rotate(6deg); animation:certCollageRight 3.9s .32s ease-in-out infinite alternate; }
+  @keyframes certCollageLeft{
+    from{ opacity:.62; transform:translate3d(-5px,5px,0) rotate(-6deg); }
+    to{ opacity:.72; transform:translate3d(10px,-5px,0) rotate(-5deg); }
+  }
+  @keyframes certCollageCenter{
+    from{ opacity:.64; transform:translate3d(-4px,-3px,0) rotate(-1deg); }
+    to{ opacity:.72; transform:translate3d(5px,6px,0) rotate(0deg); }
+  }
+  @keyframes certCollageRight{
+    from{ opacity:.62; transform:translate3d(6px,-4px,0) rotate(6deg); }
+    to{ opacity:.72; transform:translate3d(-9px,6px,0) rotate(5deg); }
   }
   .certifications-section .sec-title{
     width:max-content;
@@ -2008,10 +2044,15 @@
     box-shadow:0 15px 32px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.045);
   }
   @media (max-width:800px){
-    .certifications-section::before,.certifications-section::after{ opacity:.3; }
+    .certifications-section::before{ opacity:1; background:rgba(9,12,14,.4); }
+    .cert-backdrop img{ width:92%; height:40%; opacity:.66; }
+    .cert-backdrop img:nth-child(1){ left:-22%; top:2%; }
+    .cert-backdrop img:nth-child(2){ left:5%; top:30%; height:42%; }
+    .cert-backdrop img:nth-child(3){ right:-22%; top:59%; }
     .certifications-section .sec-title{ width:auto; padding:8px 12px 10px; }
     html .certifications-section .ach-grid{ gap:18px; }
   }
+  @media (prefers-reduced-motion:reduce){ .cert-backdrop img{ animation:none !important; } }
   @media (hover:none){ .certifications-section .ach:hover{ transform:none; } }
 
   /* Navbar colors: deep charcoal capsule aligned with the cinematic portfolio. */
@@ -2655,9 +2696,9 @@
     gap:16px;
   }
   .education-section .level-list::before{
-    left:11px;
-    top:24px;
-    bottom:24px;
+    left:8px;
+    top:var(--timeline-start,63px);
+    bottom:var(--timeline-end,63px);
     width:1px;
     background:rgba(201,107,50,.42);
   }
@@ -2678,7 +2719,7 @@
     position:absolute;
     display:block;
     z-index:3;
-    left:-34px;
+    left:-39px;
     top:50%;
     width:10px;
     height:10px;
@@ -2790,10 +2831,10 @@
   @media (max-width:760px){
     .education-section{ padding-top:28px !important; }
     .education-section .sec-title h2{ font-size:clamp(2.1rem,10vw,2.45rem) !important; }
-    .education-section .level-list{ padding-left:27px; gap:13px; }
-    .education-section .level-list::before{ left:7px; }
+    .education-section .level-list{ padding-left:32px; gap:13px; }
+    .education-section .level-list::before{ left:4px; top:var(--timeline-start,71px); bottom:var(--timeline-end,71px); }
     .education-section .level-item{ grid-template-columns:48px minmax(0,1fr); gap:12px; min-height:142px; padding:58px 15px 17px; }
-    .education-section .level-item::before{ left:-25px; width:8px; height:8px; }
+    .education-section .level-item::before{ left:-34px; width:8px; height:8px; }
     .education-section .level-logo{ width:46px; height:46px; padding:5px; }
     .education-section .level-logo img{ width:34px; height:34px; }
     .education-section .level-item > div:last-child{ padding:0; }
@@ -3903,6 +3944,67 @@
     .contact-final-portrait img,.contact-final.in .contact-final-portrait img{ transform:none; transition:none; }
     .contact-final-btn,.portfolio-chat{ transition:none; }
   }
+
+  /* Premium portfolio assistant launcher. */
+  .chat-toggle{
+    width:60px;
+    height:60px;
+    border:1px solid rgba(201,107,50,.58);
+    border-radius:18px;
+    background:linear-gradient(145deg,rgba(29,31,32,.98),rgba(13,15,16,.98));
+    color:#e8dfd5;
+    box-shadow:0 12px 28px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.06);
+    transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease,color .22s ease;
+  }
+  .chat-toggle::before{
+    inset:-1px;
+    border-radius:18px;
+    background:linear-gradient(145deg,rgba(201,107,50,.16),transparent 44%);
+    filter:none;
+    opacity:1;
+    animation:none;
+  }
+  .chat-toggle::after{ display:none; }
+  .chat-launch-icon{
+    position:relative;
+    z-index:2;
+    display:grid;
+    place-items:center;
+    width:38px;
+    height:38px;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:12px;
+    background:rgba(255,255,255,.025);
+    color:#e6a06a;
+    font-size:1.12rem;
+  }
+  .chat-toggle:hover{
+    transform:translateY(-3px);
+    border-color:#c96b32;
+    background:linear-gradient(145deg,#24211f,#111314);
+    color:#fff;
+    box-shadow:0 15px 32px rgba(0,0,0,.38),0 0 18px rgba(201,107,50,.13),inset 0 1px 0 rgba(255,255,255,.07);
+    filter:none;
+  }
+  .chat-toggle:focus-visible{ outline:2px solid #d17a45; outline-offset:4px; }
+  .portfolio-chat.is-open .chat-toggle{ border-color:#c96b32; background:#191817; color:#fff; }
+  .portfolio-chat.is-thinking .chat-launch-icon{ color:#f0b181; }
+  .chat-callout{
+    right:70px;
+    bottom:16px;
+    border-color:rgba(201,107,50,.25);
+    border-radius:12px 12px 4px 12px;
+    background:#17191a;
+    color:#e6dfd8;
+    box-shadow:0 10px 26px rgba(0,0,0,.3);
+  }
+  .chat-callout::after{ background:#17191a; }
+  @media (max-width:720px){
+    .chat-toggle{ width:54px; height:54px; border-radius:16px; }
+    .chat-toggle::before{ border-radius:16px; }
+    .chat-launch-icon{ width:34px; height:34px; border-radius:10px; font-size:1rem; }
+  }
+  @media (prefers-reduced-motion:reduce){ .chat-toggle{ transition:none; } }
 </style>
 </head>
 <body>
@@ -3947,12 +4049,12 @@
   </div>
 
   <nav class="connect-rail" aria-label="Contact links">
-    <a class="connect-link linkedin" href="https://www.linkedin.com/in/anul-methnula/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" data-tooltip="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-    <a class="connect-link github" href="https://github.com/anulmethnula" target="_blank" rel="noopener noreferrer" aria-label="Open Anul Methnula on GitHub" title="GitHub Profile" data-tooltip="GitHub Profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-    <a class="connect-link email" href="mailto:anulmethnula@gmail.com" aria-label="Send Email" title="Send Email" data-tooltip="Send Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
-    <a class="connect-link whatsapp" href="https://wa.me/94740529061" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp" data-tooltip="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
-    <a class="connect-link cv" id="connectCv" href="Anul%20Methnula-%20BA%20Resume.pdf" download="Anul Methnula - Business Analyst Resume.pdf" aria-label="Download updated Business Analyst CV" title="Download BA CV" data-tooltip="Download BA CV"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i></a>
-    <a class="connect-link phone" href="tel:+94740529061" aria-label="Call Me" title="Call Me" data-tooltip="Call Me"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
+    <a class="connect-link linkedin" href="https://www.linkedin.com/in/anul-methnula/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-tooltip="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7M8 7.5v.01M12 17v-4a3 3 0 0 1 6 0v4M12 10v7"></path></svg></a>
+    <a class="connect-link github" href="https://github.com/anulmethnula" target="_blank" rel="noopener noreferrer" aria-label="Open Anul Methnula on GitHub" data-tooltip="GitHub Profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.5 5.5 0 0 0 19.3 3.7 5.1 5.1 0 0 0 19.1 0S17.9-.4 15 1.5a13.4 13.4 0 0 0-7 0C5.1-.4 3.9 0 3.9 0a5.1 5.1 0 0 0-.2 3.7 5.5 5.5 0 0 0-1.5 3.8c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 8 18v4"></path><path d="M8 19c-3 .9-3-1.5-4-2"></path></svg></a>
+    <a class="connect-link email" href="mailto:anulmethnula@gmail.com" aria-label="Send Email" data-tooltip="Send Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></a>
+    <a class="connect-link whatsapp" href="https://wa.me/94740529061" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" data-tooltip="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7a8.5 8.5 0 1 1 16.3-3.8Z"></path><path d="M8.5 7.8c.3-.3.7-.2.9.1l1 2c.1.3.1.6-.1.8l-.7.8a7.1 7.1 0 0 0 3 3l.8-.7c.2-.2.5-.2.8-.1l2 1c.3.2.4.6.1.9-.6.8-1.5 1.2-2.4 1.1-3.7-.5-6.6-3.4-7.1-7.1-.1-.9.3-1.8 1.1-2.4Z"></path></svg></a>
+    <a class="connect-link cv" id="connectCv" href="Anul%20Methnula-%20BA%20Resume.pdf" download="Anul Methnula - Business Analyst Resume.pdf" aria-label="Download updated Business Analyst CV" data-tooltip="Download BA CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v5h5M12 11v6M9.5 14.5 12 17l2.5-2.5"></path></svg></a>
+    <a class="connect-link phone" href="tel:+94740529061" aria-label="Call Me" data-tooltip="Call Me"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"></path></svg></a>
   </nav>
 
   <aside class="portfolio-chat" id="portfolioChat" aria-label="Anul portfolio assistant">
@@ -3981,12 +4083,7 @@
     </section>
     <button class="chat-toggle" id="chatToggle" type="button" aria-label="Open Anul AI chat" aria-expanded="false" aria-controls="chatPanel">
       <span class="chat-callout" aria-hidden="true">Ask anything from Anul</span>
-      <span class="bot-face" id="botFace" aria-hidden="true">
-        <span class="bot-antenna"></span>
-        <span class="bot-ear bot-ear-left"></span><span class="bot-ear bot-ear-right"></span>
-        <span class="bot-visor"><span class="bot-eye bot-eye-left"></span><span class="bot-eye bot-eye-right"></span></span>
-        <span class="bot-mouth"><span></span><span></span><span></span></span>
-      </span>
+      <span class="chat-launch-icon" id="botFace" aria-hidden="true"><i class="fa-regular fa-comment-dots"></i></span>
     </button>
   </aside>
 
@@ -4168,6 +4265,7 @@
     </section>
 
     <section class="certifications-section" id="certifications">
+      <div class="cert-backdrop" aria-hidden="true"><img src="cer1.png" alt=""><img src="cer2.png" alt=""><img src="cer3.png" alt=""></div>
       <div class="sec-title"><span class="bracket">[06]</span><h2>Professional Certifications</h2></div>
       <div class="ach-grid reveal">
         <div class="ach"><span class="badge">&#9733;</span><span><strong>Cloud 101: Powered by AWS</strong><small>AWS Cloud Club NIBM - Issued Jan 2026</small></span></div>
@@ -4299,7 +4397,6 @@
     connectCv.href = file;
     connectCv.download = 'Anul Methnula - Business Analyst Resume.pdf';
     connectCv.setAttribute('aria-label', label);
-    connectCv.title = label;
     connectCv.dataset.tooltip = label;
   }
 
@@ -4553,8 +4650,21 @@
   const educationDates = ['2026 – Present','Apr 2025 – Apr 2026','Sep 2023 – Sep 2024','Dec 2022 – May 2023'];
   document.querySelectorAll('.level-list').forEach(list=>{
     list.querySelectorAll('.lv-date').forEach((date,index)=>{ date.textContent = educationDates[index]; });
+    const syncTimeline=()=>{
+      const cards=[...list.querySelectorAll('.level-item')];
+      if(!cards.length)return;
+      const first=cards[0],last=cards[cards.length-1];
+      list.style.setProperty('--timeline-start',`${first.offsetTop+(first.offsetHeight/2)}px`);
+      list.style.setProperty('--timeline-end',`${list.offsetHeight-last.offsetTop-(last.offsetHeight/2)}px`);
+    };
+    requestAnimationFrame(syncTimeline);
+    new ResizeObserver(syncTimeline).observe(list);
   });
   document.querySelectorAll('.level-logo img').forEach(logo=>{ logo.src = 'nibm logo.png'; });
+
+  // Preload the three simultaneous certificate collage layers.
+  const certificationImages=['cer1.png','cer2.png','cer3.png'];
+  certificationImages.forEach(src=>{const image=new Image();image.src=src;});
 
   // ---- free local portfolio assistant (no API key or usage fees) ----
   const portfolioChat = document.getElementById('portfolioChat');
