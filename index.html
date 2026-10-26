@@ -4175,6 +4175,143 @@
   .portfolio-chat{ opacity:0; visibility:hidden; pointer-events:none; transition:opacity .22s ease,visibility 0s linear .22s; }
   .portfolio-chat.is-visible{ opacity:1; visibility:visible; pointer-events:auto; transition-delay:0s; }
 
+  /* Premium monochrome glass skills — video and moving tool track preserved. */
+  .page > section.hero + section.skill-showcase,
+  html[data-theme="light"] .page > section.hero + section.skill-showcase{
+    position:relative; isolation:isolate; width:100%; max-width:none; margin:0;
+    padding:clamp(68px,7vw,96px) clamp(18px,4vw,64px) clamp(72px,7vw,102px) !important;
+    overflow:hidden; border:0 !important; background:#0A0A0A !important;
+    box-shadow:none !important; color:#FFFFFF;
+  }
+  .skill-showcase-video,
+  html[data-theme="light"] .skill-showcase-video{
+    position:absolute; inset:-2px; z-index:-2; display:block;
+    width:calc(100% + 4px); height:calc(100% + 4px); object-fit:cover;
+    opacity:1; filter:grayscale(65%) brightness(.72) contrast(1.05);
+    transform:scale(1.008); pointer-events:none;
+  }
+  .skill-showcase::before,
+  html[data-theme="light"] .skill-showcase::before{
+    content:""; position:absolute; z-index:-1; inset:0; pointer-events:none;
+    background:rgba(0,0,0,.24);
+    box-shadow:none;
+  }
+  .skill-showcase::after,
+  html[data-theme="light"] .skill-showcase::after{ display:none !important; animation:none !important; }
+  .skill-showcase > *:not(.skill-showcase-video){ position:relative; z-index:1; }
+  .skill-showcase .sec-title,
+  .page > section.skill-showcase .sec-title{
+    display:block; width:100%; max-width:900px; margin:0 auto 12px;
+    text-align:center; opacity:0; translate:0 20px;
+  }
+  .skill-showcase .sec-title .bracket{ display:none; }
+  .skill-showcase .sec-title h2,
+  html[data-theme="light"] .skill-showcase .sec-title h2{
+    margin:0; color:#FFFFFF !important; background:none !important;
+    font-family:'DM Sans','Helvetica Neue',Arial,sans-serif !important;
+    font-size:clamp(2.7rem,5vw,5.2rem) !important; font-weight:760 !important;
+    line-height:.94; letter-spacing:-.065em !important; text-align:center;
+    text-shadow:0 3px 28px rgba(0,0,0,.24) !important; -webkit-text-fill-color:#FFFFFF !important;
+  }
+  .skill-showcase-subtitle{
+    max-width:680px; margin:0 auto 28px; color:rgba(255,255,255,.78) !important;
+    font-size:clamp(.98rem,1.15vw,1.12rem); line-height:1.6; text-align:center;
+    opacity:0; translate:0 14px;
+  }
+  .skill-marquees{ width:100%; max-width:1480px; margin:0 auto 24px; opacity:0; translate:0 16px; }
+  .tool-marquee,
+  html[data-theme="light"] .tool-marquee{
+    height:68px; overflow:hidden;
+    border:1px solid rgba(255,255,255,.42) !important; border-radius:24px;
+    background:rgba(255,255,255,.18) !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 14px 35px rgba(0,0,0,.12) !important;
+    -webkit-backdrop-filter:blur(24px) saturate(115%); backdrop-filter:blur(24px) saturate(115%);
+    -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 6%,#000 94%,transparent 100%);
+    mask-image:linear-gradient(to right,transparent 0%,#000 6%,#000 94%,transparent 100%);
+  }
+  .tool-marquee::before,.tool-marquee::after{ display:none; }
+  .tool-marquee-track{
+    animation:toolsLeft 42s linear infinite; will-change:transform;
+  }
+  .tool-marquee-item,
+  html[data-theme="light"] .tool-marquee-item{ color:#FFFFFF; font-weight:650; }
+  .tool-marquee-item:hover{ color:#FFFFFF; transform:translateY(-1px); filter:brightness(1.08); }
+  .tool-marquee .tool-logo{ background:var(--brand); filter:drop-shadow(0 3px 7px rgba(0,0,0,.22)); }
+  .tool-marquee .tool-logo img{ filter:none; }
+  .skill-showcase-grid,
+  html[data-theme="light"] .skill-showcase-grid{
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); grid-auto-rows:1fr;
+    width:100%; max-width:1480px; margin:0 auto; gap:16px;
+    opacity:1; transform:none; transition:none;
+  }
+  .skill-tile,
+  html[data-theme="light"] .skill-tile{
+    position:relative; isolation:isolate; display:flex; flex-direction:column;
+    min-width:0; min-height:168px; height:100%; padding:17px 18px;
+    overflow:hidden; border:1px solid rgba(255,255,255,.88) !important; border-radius:22px;
+    background:rgba(255,255,255,.72) !important;
+    box-shadow:0 18px 45px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.95) !important;
+    -webkit-backdrop-filter:blur(22px) saturate(110%); backdrop-filter:blur(22px) saturate(110%);
+    opacity:0; translate:0 20px;
+    transition:transform .28s cubic-bezier(.22,1,.36,1),border-color .28s ease,background .28s ease,box-shadow .28s ease;
+  }
+  .skill-tile::after{
+    content:""; position:absolute; z-index:-1; inset:0; pointer-events:none;
+    background:linear-gradient(135deg,rgba(255,255,255,.65),transparent 38%);
+    opacity:.42; transition:opacity .28s ease;
+  }
+  .skill-tile:nth-child(n){ border-top-color:rgba(255,255,255,.88) !important; }
+  .skill-tile:hover,
+  html[data-theme="light"] .skill-tile:hover{
+    transform:translateY(-4px) scale(1.01); border-color:#FFFFFF !important;
+    background:rgba(255,255,255,.78) !important;
+    box-shadow:0 24px 52px rgba(0,0,0,.15),inset 0 1px 0 #FFFFFF !important;
+  }
+  .skill-tile:hover::after{ opacity:.72; }
+  .skill-tile i,
+  html[data-theme="light"] .skill-tile i{
+    display:grid; place-items:center; width:38px; height:38px; margin:0 0 15px;
+    border:1px solid rgba(0,0,0,.08); border-radius:11px;
+    background:rgba(255,255,255,.65) !important; color:#000000 !important;
+    box-shadow:0 5px 14px rgba(0,0,0,.055),inset 0 1px 0 rgba(255,255,255,.96); font-size:.94rem;
+  }
+  .skill-tile h3,
+  html[data-theme="light"] .skill-tile h3{
+    margin:0 0 7px; color:#111111 !important; -webkit-text-fill-color:#111111 !important;
+    font-size:1.04rem; font-weight:650 !important; line-height:1.3;
+  }
+  .skill-tile p,
+  html[data-theme="light"] .skill-tile p{
+    flex:1; margin:0; color:#555555 !important;
+    font-size:.86rem; line-height:1.5;
+  }
+  body:has(.skill-showcase:hover) .cursor-glow,
+  body:has(.skill-showcase:hover) .cursor-dust,
+  body:has(.skill-showcase:hover) .cursor-ripple{ display:none !important; }
+  .skill-showcase:has(.skill-showcase-grid.in) .sec-title{ animation:skillGlassIn .58s cubic-bezier(.22,1,.36,1) both; }
+  .skill-showcase:has(.skill-showcase-grid.in) .skill-showcase-subtitle{ animation:skillGlassIn .52s .08s cubic-bezier(.22,1,.36,1) both; }
+  .skill-showcase:has(.skill-showcase-grid.in) .skill-marquees{ animation:skillGlassIn .52s .15s cubic-bezier(.22,1,.36,1) both; }
+  .skill-showcase-grid.in .skill-tile{ animation:skillGlassIn .52s cubic-bezier(.22,1,.36,1) both; }
+  .skill-showcase-grid.in .skill-tile:nth-child(1){ animation-delay:.21s; }
+  .skill-showcase-grid.in .skill-tile:nth-child(2){ animation-delay:.27s; }
+  .skill-showcase-grid.in .skill-tile:nth-child(3){ animation-delay:.33s; }
+  .skill-showcase-grid.in .skill-tile:nth-child(4){ animation-delay:.39s; }
+  @keyframes skillGlassIn{ to{ opacity:1; translate:0 0; } }
+  @media (max-width:1000px){ .skill-showcase-grid,html[data-theme="light"] .skill-showcase-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:650px){
+    .page > section.hero + section.skill-showcase,html[data-theme="light"] .page > section.hero + section.skill-showcase{ padding:58px 14px 68px !important; }
+    .skill-showcase .sec-title h2,html[data-theme="light"] .skill-showcase .sec-title h2{ font-size:clamp(2.7rem,13vw,4rem) !important; }
+    .skill-showcase-subtitle{ margin-bottom:23px; padding-inline:8px; }
+    .skill-marquees{ margin-bottom:18px; }
+    .tool-marquee{ height:58px; border-radius:19px; }
+    .skill-showcase-grid,html[data-theme="light"] .skill-showcase-grid{ grid-template-columns:1fr; gap:13px; }
+    .skill-tile,html[data-theme="light"] .skill-tile{ min-height:0; padding:19px 18px; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .skill-showcase .sec-title,.skill-showcase-subtitle,.skill-marquees,.skill-tile{ opacity:1; translate:0 0; animation:none !important; }
+    .skill-tile{ transition:none; }
+  }
+
   /* Premium monochrome glass projects */
   .page > section.projects-section,
   html[data-theme="light"] .page > section.projects-section{
@@ -4986,16 +5123,13 @@
     <section class="skill-showcase" id="skills">
       <video class="skill-showcase-video" autoplay muted loop playsinline aria-hidden="true"><source src="video.mp4" type="video/mp4"></video>
       <div class="sec-title"><span class="bracket">[01]</span><h2>Skills &amp; Expertise</h2></div>
+      <p class="skill-showcase-subtitle">Tools, methodologies and core skills I use to turn ideas into real solutions.</p>
       <div class="skill-marquees" aria-label="Professional tools and technical foundation"></div>
       <div class="skill-showcase-grid reveal">
         <article class="skill-tile"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i><h3>Project Planning &amp; Coordination</h3><p>Planning project activities, coordinating tasks, managing milestones and tracking project progress.</p></article>
         <article class="skill-tile"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i><h3>Agile &amp; Scrum</h3><p>Supporting sprint planning, backlog management, daily stand-ups, sprint reviews and retrospectives.</p></article>
         <article class="skill-tile"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h3>Requirements Analysis</h3><p>Gathering, analysing, prioritising and translating business needs into clear system requirements.</p></article>
         <article class="skill-tile"><i class="fa-solid fa-users" aria-hidden="true"></i><h3>Stakeholder Management</h3><p>Communicating with stakeholders, managing expectations and coordinating with project teams.</p></article>
-        <article class="skill-tile"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><h3>Process Modeling</h3><p>Creating BPMN, UML, As-Is and To-Be process models to identify and improve business workflows.</p></article>
-        <article class="skill-tile"><i class="fa-solid fa-folder-open" aria-hidden="true"></i><h3>BA &amp; PM Documentation</h3><p>Preparing SRS, BRD, user stories, use cases, acceptance criteria, meeting minutes and project reports.</p></article>
-        <article class="skill-tile"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><h3>Project Tools</h3><p>Using Jira, Trello, Microsoft Project, Excel, Figma and Draw.io for planning, tracking and documentation.</p></article>
-        <article class="skill-tile"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><h3>UAT &amp; Delivery Support</h3><p>Supporting requirement validation, test scenarios, user acceptance testing, issue tracking and go-live activities.</p></article>
       </div>
     </section>
 
