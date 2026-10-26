@@ -4342,7 +4342,7 @@
   .experience-section::after,
   html[data-theme="light"] .experience-section::after{
     content:""; position:absolute; z-index:1; inset:0; pointer-events:none;
-    background:linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.42)),repeating-linear-gradient(102deg,transparent 0 34px,rgba(255,255,255,.018) 35px,transparent 36px 72px);
+    background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),linear-gradient(0deg,rgba(255,255,255,.045),transparent 20%),repeating-linear-gradient(102deg,transparent 0 34px,rgba(255,255,255,.018) 35px,transparent 36px 72px);
     background-size:auto,100% 180%; opacity:1; mask-image:none;
     animation:experienceRainVeil 8s linear infinite;
   }
@@ -4351,9 +4351,17 @@
   .experience-section .sec-title,
   .page > section.experience-section .sec-title{
     display:block; max-width:1000px; margin:0 auto 15px; text-align:center;
-    opacity:0; translate:0 20px;
+    opacity:1; translate:0 0;
   }
-  .experience-section .sec-title .bracket{ display:none; }
+  .experience-section .sec-title .bracket{
+    display:inline-flex; align-items:center; gap:16px; margin:0 0 18px;
+    color:rgba(255,255,255,.7) !important; font-size:.68rem; font-weight:700;
+    line-height:1; letter-spacing:.2em; text-transform:uppercase;
+    opacity:0; translate:0 12px;
+  }
+  .experience-section .sec-title .bracket::before,.experience-section .sec-title .bracket::after{
+    content:""; width:44px; height:1px; background:rgba(255,255,255,.34);
+  }
   .experience-section .sec-title h2,
   html[data-theme="light"] .experience-section .sec-title h2{
     margin:0; color:#FFFFFF !important; background:none !important;
@@ -4361,6 +4369,7 @@
     font-size:clamp(3rem,5.5vw,5.8rem) !important; font-weight:700 !important;
     line-height:.95; letter-spacing:-.06em !important; text-align:center;
     text-shadow:0 4px 30px rgba(0,0,0,.34) !important; -webkit-text-fill-color:#FFFFFF !important;
+    opacity:0; translate:0 20px;
   }
   .experience-intro,
   html[data-theme="light"] .experience-intro{
@@ -4372,19 +4381,19 @@
   .experience-card,
   html[data-theme="light"] .experience-card{
     position:relative; isolation:isolate; display:grid;
-    grid-template-columns:minmax(170px,22%) minmax(0,1fr); align-items:center;
+    grid-template-columns:minmax(190px,24%) minmax(0,1fr); align-items:center;
     gap:clamp(28px,4vw,54px); width:100%; max-width:1180px; margin:0 auto;
     padding:clamp(24px,3.2vw,42px); overflow:hidden;
-    border:1px solid rgba(255,255,255,.24) !important; border-radius:28px;
-    background:rgba(18,18,18,.58) !important;
-    box-shadow:0 24px 60px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.12) !important;
-    -webkit-backdrop-filter:blur(24px) saturate(110%); backdrop-filter:blur(24px) saturate(110%);
+    border:1px solid rgba(255,255,255,.28) !important; border-radius:28px;
+    background:rgba(20,20,20,.46) !important;
+    box-shadow:0 24px 70px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.16) !important;
+    -webkit-backdrop-filter:blur(26px) saturate(115%); backdrop-filter:blur(26px) saturate(115%);
     opacity:0; translate:0 24px; transform:none;
     transition:transform .32s cubic-bezier(.22,1,.36,1),box-shadow .32s ease,border-color .32s ease;
   }
   .experience-card::before{
     content:""; position:absolute; z-index:-1; inset:-75% -42%; pointer-events:none;
-    background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.08) 45%,transparent 70%);
+    background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.08) 45%,transparent 65%);
     transform:translateX(-34%); animation:experienceGlassSweep 11s ease-in-out infinite;
   }
   .experience-card::after{
@@ -4394,20 +4403,20 @@
   @keyframes experienceGlassSweep{ 0%,28%{ transform:translateX(-34%); } 70%,100%{ transform:translateX(34%); } }
   .experience-card:hover,
   html[data-theme="light"] .experience-card:hover{
-    transform:translateY(-4px) scale(1.005); border-color:rgba(255,255,255,.3) !important;
-    background:rgba(18,18,18,.62) !important;
+    transform:translateY(-4px) scale(1.005); border-color:rgba(255,255,255,.34) !important;
+    background:rgba(20,20,20,.52) !important;
     box-shadow:0 32px 72px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.16) !important;
   }
   .experience-mark,
   html[data-theme="light"] .experience-mark{
     display:grid; place-items:center; align-self:stretch; width:100%; height:auto; min-height:190px;
     padding:clamp(20px,3vw,34px); overflow:hidden;
-    border:1px solid rgba(255,255,255,.18); border-radius:18px;
-    background:rgba(255,255,255,.08) !important;
+    border:1px solid rgba(255,255,255,.20); border-radius:20px;
+    background:rgba(255,255,255,.07) !important;
     box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
     opacity:0; translate:-12px 0;
   }
-  .experience-mark img{ display:block; width:100%; height:100%; max-height:150px; object-fit:contain; filter:saturate(.72) contrast(1.02); }
+  .experience-mark img{ display:block; width:100%; height:100%; max-height:150px; object-fit:contain; filter:none; }
   .experience-content{ position:relative; min-width:0; opacity:0; translate:14px 0; }
   .experience-label{
     display:block; margin:0 0 11px; color:rgba(255,255,255,.62) !important;
@@ -4425,19 +4434,24 @@
   .experience-date,
   html[data-theme="light"] .experience-date{
     position:absolute; top:0; right:0; padding:8px 12px;
-    border:1px solid rgba(255,255,255,.18) !important; border-radius:12px;
-    background:rgba(255,255,255,.06) !important; color:#FFFFFF !important;
+    border:1px solid rgba(255,255,255,.18) !important; border-radius:999px;
+    background:rgba(255,255,255,.07) !important; color:#FFFFFF !important;
     box-shadow:inset 0 1px 0 rgba(255,255,255,.08); font-size:.72rem;
   }
-  .experience-card ul{ display:flex; flex-direction:column; gap:8px; margin:0 0 20px; padding:0; list-style:none; }
+  .experience-card ul{ display:flex; flex-direction:column; gap:0; margin:0 0 20px; padding:0; list-style:none; }
   .experience-card li,
   html[data-theme="light"] .experience-card li{
-    position:relative; padding-left:18px; color:rgba(255,255,255,.82) !important;
+    position:relative; min-height:38px; padding:7px 0 7px 28px; color:rgba(255,255,255,.82) !important;
     font-size:clamp(.88rem,.9vw,.98rem); line-height:1.5;
+    opacity:0; translate:0 10px;
   }
   .experience-card li::before{
-    content:""; position:absolute; left:1px; top:.64em; width:5px; height:5px;
-    border:0; border-radius:50%; background:rgba(255,255,255,.72); transform:none;
+    content:""; position:absolute; z-index:2; left:2px; top:1.05em; width:7px; height:7px;
+    border:1px solid rgba(255,255,255,.45); border-radius:50%; background:rgba(255,255,255,.78); transform:none;
+  }
+  .experience-card li:not(:last-child)::after{
+    content:""; position:absolute; z-index:1; left:5px; top:calc(1.05em + 8px); bottom:-8px;
+    width:1px; background:linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.08));
   }
   .experience-tags{ display:flex; flex-wrap:wrap; gap:8px; opacity:0; translate:0 10px; }
   .experience-tags span,
@@ -4446,12 +4460,17 @@
     background:rgba(255,255,255,.05) !important; color:#FFFFFF !important;
     box-shadow:inset 0 1px 0 rgba(255,255,255,.045); font-size:.72rem;
   }
-  .experience-section:has(.experience-card.in) .sec-title{ animation:experienceReveal .6s cubic-bezier(.22,1,.36,1) both; }
-  .experience-section:has(.experience-card.in) .experience-intro{ animation:experienceReveal .54s .08s cubic-bezier(.22,1,.36,1) both; }
-  .experience-card.in{ animation:experienceReveal .62s .16s cubic-bezier(.22,1,.36,1) both; }
-  .experience-card.in .experience-mark{ animation:experienceRevealX .52s .28s cubic-bezier(.22,1,.36,1) both; }
-  .experience-card.in .experience-content{ animation:experienceRevealX .52s .34s cubic-bezier(.22,1,.36,1) both; }
-  .experience-card.in .experience-tags{ animation:experienceReveal .48s .48s cubic-bezier(.22,1,.36,1) both; }
+  .experience-section:has(.experience-card.in) .sec-title .bracket{ animation:experienceReveal .44s cubic-bezier(.22,1,.36,1) both; }
+  .experience-section:has(.experience-card.in) .sec-title h2{ animation:experienceReveal .58s .06s cubic-bezier(.22,1,.36,1) both; }
+  .experience-section:has(.experience-card.in) .experience-intro{ animation:experienceReveal .54s .13s cubic-bezier(.22,1,.36,1) both; }
+  .experience-card.in{ animation:experienceReveal .62s .2s cubic-bezier(.22,1,.36,1) both; }
+  .experience-card.in .experience-mark{ animation:experienceRevealX .52s .31s cubic-bezier(.22,1,.36,1) both; }
+  .experience-card.in .experience-content{ animation:experienceRevealX .52s .37s cubic-bezier(.22,1,.36,1) both; }
+  .experience-card.in li:nth-child(1){ animation:experienceReveal .42s .46s cubic-bezier(.22,1,.36,1) both; }
+  .experience-card.in li:nth-child(2){ animation:experienceReveal .42s .52s cubic-bezier(.22,1,.36,1) both; }
+  .experience-card.in li:nth-child(3){ animation:experienceReveal .42s .58s cubic-bezier(.22,1,.36,1) both; }
+  .experience-card.in li:nth-child(4){ animation:experienceReveal .42s .64s cubic-bezier(.22,1,.36,1) both; }
+  .experience-card.in .experience-tags{ animation:experienceReveal .48s .72s cubic-bezier(.22,1,.36,1) both; }
   @keyframes experienceReveal{ from{ opacity:0; translate:0 20px; } to{ opacity:1; translate:0 0; } }
   @keyframes experienceRevealX{ from{ opacity:0; translate:12px 0; } to{ opacity:1; translate:0 0; } }
   @media (max-width:820px){
@@ -4469,7 +4488,7 @@
   }
   @media (prefers-reduced-motion:reduce){
     .experience-section::before,.experience-section::after,.experience-card::before{ animation:none !important; }
-    .experience-section .sec-title,.experience-intro,.experience-card,.experience-mark,.experience-content,.experience-tags{ opacity:1; translate:0 0; animation:none !important; }
+    .experience-section .sec-title,.experience-section .sec-title .bracket,.experience-section .sec-title h2,.experience-intro,.experience-card,.experience-mark,.experience-content,.experience-card li,.experience-tags{ opacity:1; translate:0 0; animation:none !important; }
     .experience-card{ transition:none; }
   }
 
@@ -5029,7 +5048,7 @@
   }
 
   /* Monochrome social rail. */
-  .connect-rail{ border:1px solid rgba(255,255,255,.18) !important; background:rgba(14,14,14,.68) !important; box-shadow:0 16px 38px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.12) !important; backdrop-filter:blur(20px) saturate(1.05); -webkit-backdrop-filter:blur(20px) saturate(1.05); }
+  .connect-rail{ border:1px solid rgba(255,255,255,.16) !important; background:rgba(20,20,20,.55) !important; box-shadow:0 16px 38px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.12) !important; backdrop-filter:blur(20px) saturate(1.05); -webkit-backdrop-filter:blur(20px) saturate(1.05); }
   .connect-link,.connect-link:is(.linkedin,.github,.email,.whatsapp,.cv,.phone){ border-color:rgba(255,255,255,.15) !important; background:rgba(255,255,255,.07) !important; color:#fff !important; box-shadow:inset 0 1px rgba(255,255,255,.08) !important; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
   .connect-link svg{ stroke:#fff !important; }
   .connect-link:hover{ border-color:rgba(255,255,255,.34) !important; background:rgba(255,255,255,.16) !important; color:#fff !important; transform:translateY(-2px); }
@@ -5427,7 +5446,7 @@
 
     <section class="experience-section" id="experience">
       <canvas class="experience-weather" aria-hidden="true"></canvas>
-      <div class="sec-title"><span class="bracket">[03] INDUSTRY EXPERIENCE</span><h2>Professional Experience</h2></div>
+      <div class="sec-title"><span class="bracket">CAREER JOURNEY</span><h2>Professional Experience</h2></div>
       <p class="experience-intro">Professional experience focused on business analysis, process improvement, requirements gathering, and supporting digital transformation initiatives.</p>
       <article class="experience-card reveal">
         <div class="experience-mark"><img src="supunlogo.png" width="1043" height="795" loading="lazy" alt="Supun Group of Companies logo"></div>
