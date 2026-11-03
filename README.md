@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="readme-banner.svg" width="100%" alt="Anul Methnula Portfolio" />
+  <img src="supun-it-solutions-banner.svg" width="100%" alt="Supun IT Solutions" />
 </p>
 
 <p align="center">
