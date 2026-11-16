@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="supun-it-solutions-banner.svg" width="100%" alt="Supun IT Solutions" />
+  <img src="readme-banner.svg" width="100%" alt="Anul Methnula Personal Portfolio" />
 </p>
 
 <p align="center">
@@ -17,7 +17,7 @@ This portfolio presents my work across **Business Analysis, Project Management a
 - Requirements, process and workflow thinking
 - Project coordination and planning work
 - Skills, certifications and experience
-- Separate PM and BA resumes
+- Business Analysis resume
 
 ## Preview
 
@@ -26,7 +26,7 @@ This portfolio presents my work across **Business Analysis, Project Management a
 <tr>
 <td align="center"><img src="erp.png" width="260" alt="ERP project preview" /></td>
 <td align="center"><img src="aiesec1.png" width="260" alt="Leadership experience preview" /></td>
-<td align="center"><img src="contactme.png" width="260" alt="Portfolio contact section" /></td>
+<td align="center"><img src="contact.png" width="260" alt="Portfolio contact section" /></td>
 </tr>
 </table>
 </div>
@@ -59,7 +59,7 @@ The portfolio is browser based. Open `index.html` locally or host it using a sta
 
 ## Resume Files
 
-This repository includes separate resumes for **Project Management** and **Business Analysis** opportunities.
+This repository currently includes my [**Business Analysis resume**](Anul%20Methnula-%20BA%20Resume.pdf).
 
 ---
 
