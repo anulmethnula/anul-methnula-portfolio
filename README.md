@@ -24,9 +24,9 @@ This portfolio presents my work across **Business Analysis, Project Management a
 <div align="center">
 <table>
 <tr>
-<td align="center"><img src="erp.png" width="260" alt="ERP project preview" /></td>
-<td align="center"><img src="aiesec1.png" width="260" alt="Leadership experience preview" /></td>
-<td align="center"><img src="contact.png" width="260" alt="Portfolio contact section" /></td>
+<td align="center"><img src="assets/media/erp.png" width="260" alt="ERP project preview" /></td>
+<td align="center"><img src="assets/media/aiesec1.png" width="260" alt="Leadership experience preview" /></td>
+<td align="center"><img src="assets/media/contact.png" width="260" alt="Portfolio contact section" /></td>
 </tr>
 </table>
 </div>
@@ -59,7 +59,7 @@ The portfolio is browser based. Open `index.html` locally or host it using a sta
 
 ## Resume Files
 
-This repository currently includes my [**Business Analysis resume**](Anul%20Methnula-%20BA%20Resume.pdf).
+This repository currently includes my [**Business Analysis resume**](docs/resumes/Anul%20Methnula-%20BA%20Resume.pdf).
 
 ---
 

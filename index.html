@@ -248,12 +248,12 @@
   .projects-section .quest-card::before{ display:block; content:"0" counter(project-card); top:16px; left:18px; right:auto; width:auto; height:auto; padding:5px 8px; border:1px solid rgba(255,255,255,.18); border-radius:7px; background:rgba(5,13,12,.78); color:#f3f5f2; font-family:'Share Tech Mono',monospace; font-size:.68rem; line-height:1; letter-spacing:.08em; opacity:1; z-index:2; backdrop-filter:blur(8px); }
   .project-media{ height:clamp(210px,17vw,270px); flex:0 0 auto; background-image:linear-gradient(135deg,rgba(4,19,27,.2),rgba(4,10,16,.5)),url("it.png"); background-size:cover; background-position:center; border-bottom:1px solid rgba(255,255,255,.12); transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .55s ease; }
   .projects-section .quest-card:hover .project-media{ transform:scale(1.035); filter:saturate(1.08) brightness(1.04); }
-  .projects-section .quest-card:nth-child(1) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.14),rgba(4,10,16,.3)),url("qr.png"); background-position:center; }
-  .projects-section .quest-card:nth-child(2) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.12),rgba(4,10,16,.3)),url("gas.png"); background-position:center; filter:none; }
-  .projects-section .quest-card:nth-child(3) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.2),rgba(4,10,16,.38)),url("queue.png"); background-position:center; filter:none; }
-  .projects-section .quest-card:nth-child(4) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.12),rgba(4,10,16,.3)),url("feedback.png"); background-position:center; filter:none; }
-  .projects-section .quest-card:nth-child(5) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.12),rgba(4,10,16,.3)),url("hotel.png"); background-position:center; filter:none; }
-  .projects-section .quest-card:nth-child(6) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.14),rgba(4,10,16,.3)),url("erp.png"); background-position:center; filter:none; }
+  .projects-section .quest-card:nth-child(1) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.14),rgba(4,10,16,.3)),url("assets/media/qr.png"); background-position:center; }
+  .projects-section .quest-card:nth-child(2) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.12),rgba(4,10,16,.3)),url("assets/media/gas.png"); background-position:center; filter:none; }
+  .projects-section .quest-card:nth-child(3) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.2),rgba(4,10,16,.38)),url("assets/media/queue.png"); background-position:center; filter:none; }
+  .projects-section .quest-card:nth-child(4) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.12),rgba(4,10,16,.3)),url("assets/media/feedback.png"); background-position:center; filter:none; }
+  .projects-section .quest-card:nth-child(5) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.12),rgba(4,10,16,.3)),url("assets/media/hotel.png"); background-position:center; filter:none; }
+  .projects-section .quest-card:nth-child(6) .project-media{ background-image:linear-gradient(135deg,rgba(4,19,27,.14),rgba(4,10,16,.3)),url("assets/media/erp.png"); background-position:center; filter:none; }
   .projects-section .quest-card > :not(.project-media){ margin-inline:22px; }
   .projects-section .quest-card h3{ margin-top:16px; margin-bottom:8px; font-family:'Manrope',sans-serif; font-size:1.16rem; line-height:1.3; letter-spacing:-.02em; color:#f5f7f8; }
   .projects-section .quest-meta{ margin-bottom:0; font-family:'Manrope',sans-serif; font-size:.76rem; color:#e8b07b; font-weight:800; line-height:1.55; }
@@ -386,10 +386,10 @@
     display:flex; align-items:center; justify-content:center;
     font-size:0.7rem; font-weight:700; color:#1a1204;
   }
-  .certifications-section{ position:relative; isolation:isolate; overflow:hidden; min-height:600px; padding:28px clamp(24px,6vw,104px) 86px !important; background-image:linear-gradient(110deg,rgba(5,10,13,.94),rgba(6,12,15,.78) 48%,rgba(5,10,13,.92)),url("cer1.png") !important; background-size:cover,108%; background-position:center; animation:certBackdrop 16s ease-in-out infinite alternate; }
+  .certifications-section{ position:relative; isolation:isolate; overflow:hidden; min-height:600px; padding:28px clamp(24px,6vw,104px) 86px !important; background-image:linear-gradient(110deg,rgba(5,10,13,.94),rgba(6,12,15,.78) 48%,rgba(5,10,13,.92)),url("assets/media/cer1.png") !important; background-size:cover,108%; background-position:center; animation:certBackdrop 16s ease-in-out infinite alternate; }
   .certifications-section::before,.certifications-section::after{ content:""; position:absolute; z-index:-1; top:20%; width:min(43vw,650px); height:68%; border:1px solid rgba(255,255,255,.13); border-radius:20px; background-repeat:no-repeat; background-position:center; background-size:cover; opacity:.2; filter:saturate(.76) contrast(1.05) brightness(.68); box-shadow:0 24px 60px rgba(0,0,0,.4); will-change:transform; }
-  .certifications-section::before{ left:-8%; background-image:linear-gradient(rgba(5,10,13,.24),rgba(5,10,13,.58)),url("cer2.png"); transform:rotate(-7deg); animation:certFloatLeft 9s ease-in-out infinite; }
-  .certifications-section::after{ right:-8%; background-image:linear-gradient(rgba(5,10,13,.24),rgba(5,10,13,.58)),url("cer3.png"); transform:rotate(7deg); animation:certFloatRight 10s ease-in-out infinite; }
+  .certifications-section::before{ left:-8%; background-image:linear-gradient(rgba(5,10,13,.24),rgba(5,10,13,.58)),url("assets/media/cer2.png"); transform:rotate(-7deg); animation:certFloatLeft 9s ease-in-out infinite; }
+  .certifications-section::after{ right:-8%; background-image:linear-gradient(rgba(5,10,13,.24),rgba(5,10,13,.58)),url("assets/media/cer3.png"); transform:rotate(7deg); animation:certFloatRight 10s ease-in-out infinite; }
   @keyframes certBackdrop{ from{ background-size:cover,108%; background-position:center,50% 49%; } to{ background-size:cover,111%; background-position:center,50% 52%; } }
   @keyframes certFloatLeft{ 0%,100%{ transform:translate3d(0,0,0) rotate(-7deg) scale(1); } 50%{ transform:translate3d(16px,-10px,0) rotate(-5deg) scale(1.018); } }
   @keyframes certFloatRight{ 0%,100%{ transform:translate3d(0,0,0) rotate(7deg) scale(1); } 50%{ transform:translate3d(-16px,11px,0) rotate(5deg) scale(1.018); } }
@@ -1227,10 +1227,10 @@
   html[data-theme="light"] .education-section .level-item:nth-child(3) .level-badge{ border-color:rgba(196,116,42,.42); background:linear-gradient(145deg,#faead8,#fff8ef); color:#a65b16; }
   html[data-theme="light"] .education-section .level-item:nth-child(4) .level-badge{ border-color:rgba(170,79,121,.38); background:linear-gradient(145deg,#f6e4ec,#fff7fa); color:#984867; }
   html[data-theme="light"] .education-section .level-item:hover .level-badge{ filter:saturate(1.14) brightness(1.015); }
-  html[data-theme="light"] .certifications-section{ background-image:linear-gradient(110deg,rgba(239,244,236,.4),rgba(248,241,226,.22) 48%,rgba(232,241,237,.4)),url("cer1.png") !important; background-size:cover,108%; background-position:center; }
+  html[data-theme="light"] .certifications-section{ background-image:linear-gradient(110deg,rgba(239,244,236,.4),rgba(248,241,226,.22) 48%,rgba(232,241,237,.4)),url("assets/media/cer1.png") !important; background-size:cover,108%; background-position:center; }
   html[data-theme="light"] .certifications-section::before,html[data-theme="light"] .certifications-section::after{ opacity:.7; filter:saturate(1.08) contrast(1.12) brightness(.98); box-shadow:0 24px 58px rgba(45,61,53,.18); }
-  html[data-theme="light"] .certifications-section::before{ background-image:linear-gradient(rgba(244,248,241,.08),rgba(236,241,234,.2)),url("cer2.png"); }
-  html[data-theme="light"] .certifications-section::after{ background-image:linear-gradient(rgba(244,248,241,.08),rgba(236,241,234,.2)),url("cer3.png"); }
+  html[data-theme="light"] .certifications-section::before{ background-image:linear-gradient(rgba(244,248,241,.08),rgba(236,241,234,.2)),url("assets/media/cer2.png"); }
+  html[data-theme="light"] .certifications-section::after{ background-image:linear-gradient(rgba(244,248,241,.08),rgba(236,241,234,.2)),url("assets/media/cer3.png"); }
   html[data-theme="light"] .certifications-section .sec-title h2{ color:#101512; text-shadow:none; }
   html[data-theme="light"] .certifications-section .ach{ border-color:rgba(45,111,82,.24); background:rgba(255,255,252,.94); box-shadow:0 16px 38px rgba(42,65,56,.11); }
   html[data-theme="light"] .certifications-section .ach::before{ background:#39785d; }
@@ -4082,7 +4082,7 @@
   .page > section.hero::before,
   html[data-theme="light"] .page > section.hero::before{
     content:""; position:absolute; z-index:0; inset:0; display:block !important;
-    background-image:url("hero1.png"); background-size:cover; background-position:center 42%; background-repeat:no-repeat;
+    background-image:url("assets/media/hero1.png"); background-size:cover; background-position:center 42%; background-repeat:no-repeat;
     opacity:0; animation:heroBackgroundIn .9s .08s cubic-bezier(.76,0,.24,1) forwards;
   }
   .page > section.hero::after{ display:none !important; }
@@ -4206,7 +4206,7 @@
     padding:clamp(68px,7vw,96px) clamp(18px,4vw,64px) clamp(72px,7vw,102px) !important;
     overflow:hidden; border:0 !important;
     background-color:#161616 !important;
-    background-image:url("skill.png") !important;
+    background-image:url("assets/media/skill.png") !important;
     background-size:cover !important; background-position:center center !important; background-repeat:no-repeat !important;
     box-shadow:none !important; color:#FFFFFF;
   }
@@ -5791,7 +5791,7 @@
     <a class="connect-link github" href="https://github.com/anulmethnula" target="_blank" rel="noopener noreferrer" aria-label="Open Anul Methnula on GitHub" data-tooltip="GitHub Profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.5 5.5 0 0 0 19.3 3.7 5.1 5.1 0 0 0 19.1 0S17.9-.4 15 1.5a13.4 13.4 0 0 0-7 0C5.1-.4 3.9 0 3.9 0a5.1 5.1 0 0 0-.2 3.7 5.5 5.5 0 0 0-1.5 3.8c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 8 18v4"></path><path d="M8 19c-3 .9-3-1.5-4-2"></path></svg></a>
     <a class="connect-link email" href="mailto:anulmethnula@gmail.com" aria-label="Send Email" data-tooltip="Send Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></a>
     <a class="connect-link whatsapp" href="https://wa.me/94740529061" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" data-tooltip="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7a8.5 8.5 0 1 1 16.3-3.8Z"></path><path d="M8.5 7.8c.3-.3.7-.2.9.1l1 2c.1.3.1.6-.1.8l-.7.8a7.1 7.1 0 0 0 3 3l.8-.7c.2-.2.5-.2.8-.1l2 1c.3.2.4.6.1.9-.6.8-1.5 1.2-2.4 1.1-3.7-.5-6.6-3.4-7.1-7.1-.1-.9.3-1.8 1.1-2.4Z"></path></svg></a>
-    <a class="connect-link cv" id="connectCv" href="Anul%20Methnula-%20BA%20Resume.pdf" download="Anul Methnula - Business Analyst Resume.pdf" aria-label="Download updated Business Analyst CV" data-tooltip="Download BA CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v5h5M12 11v6M9.5 14.5 12 17l2.5-2.5"></path></svg></a>
+    <a class="connect-link cv" id="connectCv" href="docs/resumes/Anul%20Methnula-%20BA%20Resume.pdf" download="Anul Methnula - Business Analyst Resume.pdf" aria-label="Download updated Business Analyst CV" data-tooltip="Download BA CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v5h5M12 11v6M9.5 14.5 12 17l2.5-2.5"></path></svg></a>
     <a class="connect-link phone" href="tel:+94740529061" aria-label="Call Me" data-tooltip="Call Me"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"></path></svg></a>
   </nav>
 
@@ -5856,7 +5856,7 @@
       <p class="projects-intro">A selection of academic, software and business projects delivered through planning, analysis and team coordination.</p>
       <div class="quest-grid">
         <div class="project-card-reveal"><div class="quest-card">
-          <div class="project-media"><div class="device-shell device-screen"><img src="qr.png" alt="QR-based electronic ticketing system interface" width="1024" height="559" loading="lazy"></div></div>
+          <div class="project-media"><div class="device-shell device-screen"><img src="assets/media/qr.png" alt="QR-based electronic ticketing system interface" width="1024" height="559" loading="lazy"></div></div>
           <div class="project-content">
           <h3>QR-Based E-Ticketing System</h3>
           <div class="quest-meta">React PWA | Flutter | Node.js | Firebase &bull; Team of 4</div>
@@ -5868,7 +5868,7 @@
           </div>
         </div></div>
         <div class="project-card-reveal"><div class="quest-card">
-          <div class="project-media"><div class="device-shell device-phone"><img src="gas.png" alt="Online gas ordering and delivery system interface" width="1024" height="559" loading="lazy"></div></div>
+          <div class="project-media"><div class="device-shell device-phone"><img src="assets/media/gas.png" alt="Online gas ordering and delivery system interface" width="1024" height="559" loading="lazy"></div></div>
           <div class="project-content">
           <h3>Online Gas Delivery System</h3>
           <div class="quest-meta">Figma | Draw.io &bull; Team of 5</div>
@@ -5880,7 +5880,7 @@
           </div>
         </div></div>
         <div class="project-card-reveal"><div class="quest-card">
-          <div class="project-media"><div class="device-shell device-screen"><img src="queue.png" alt="Queue management system project interface" width="1024" height="559" loading="lazy"></div></div>
+          <div class="project-media"><div class="device-shell device-screen"><img src="assets/media/queue.png" alt="Queue management system project interface" width="1024" height="559" loading="lazy"></div></div>
           <div class="project-content">
           <h3>Queue Management System</h3>
           <div class="quest-meta">Agile | Scrum | Project Delivery</div>
@@ -5892,7 +5892,7 @@
           </div>
         </div></div>
         <div class="project-card-reveal"><div class="quest-card">
-          <div class="project-media"><div class="device-shell device-screen"><img src="feedback.png" alt="QR-based guest and resident feedback system dashboard" width="1672" height="941" loading="lazy"></div></div>
+          <div class="project-media"><div class="device-shell device-screen"><img src="assets/media/feedback.png" alt="QR-based guest and resident feedback system dashboard" width="1672" height="941" loading="lazy"></div></div>
           <div class="project-content">
           <h3>Guest &amp; Resident Feedback System</h3>
           <div class="quest-meta">Figma | Draw.io | SRS Documentation</div>
@@ -5904,7 +5904,7 @@
           </div>
         </div></div>
         <div class="project-card-reveal"><div class="quest-card">
-          <div class="project-media"><div class="device-shell device-screen"><img src="hotel.png" alt="Hotel booking and administration system interface" width="728" height="484" loading="lazy"></div></div>
+          <div class="project-media"><div class="device-shell device-screen"><img src="assets/media/hotel.png" alt="Hotel booking and administration system interface" width="728" height="484" loading="lazy"></div></div>
           <div class="project-content">
           <h3>Hotel Management System</h3>
           <div class="quest-meta">Web Technologies | MySQL &bull; Team of 4</div>
@@ -5916,7 +5916,7 @@
           </div>
         </div></div>
         <div class="project-card-reveal"><div class="quest-card">
-          <div class="project-media"><div class="device-shell device-screen"><img src="erp.png" alt="Advanced enterprise resource planning project dashboard" width="1024" height="572" loading="lazy"></div></div>
+          <div class="project-media"><div class="device-shell device-screen"><img src="assets/media/erp.png" alt="Advanced enterprise resource planning project dashboard" width="1024" height="572" loading="lazy"></div></div>
           <div class="project-content">
           <h3>Advanced Enterprise Resource Planning</h3>
           <div class="quest-meta">SAP S/4HANA | Oracle NetSuite &bull; Team of 5</div>
@@ -5928,7 +5928,7 @@
           </div>
         </div></div>
         <div class="project-card-reveal"><div class="quest-card">
-          <div class="project-media"><div class="device-shell device-screen"><img src="camy_entrepreneurs_dashboard_workspace.png" alt="CAMY Entrepreneurs platform sales, orders, inventory and payout dashboard" width="1448" height="1086" loading="lazy"></div></div>
+          <div class="project-media"><div class="device-shell device-screen"><img src="assets/media/camy_entrepreneurs_dashboard_workspace.png" alt="CAMY Entrepreneurs platform sales, orders, inventory and payout dashboard" width="1448" height="1086" loading="lazy"></div></div>
           <div class="project-content">
           <h3>CAMY Entrepreneurs Digital Platform</h3>
           <div class="quest-meta">Technology: React | PHP | MySQL</div>
@@ -5940,7 +5940,7 @@
           </div>
         </div></div>
         <div class="project-card-reveal"><div class="quest-card">
-          <div class="project-media"><div class="device-shell device-screen"><img src="zevenra_luxury_fashion_e_commerce_showcase.png" alt="ZEVENRA luxury fashion storefront, shopping cart and commerce administration dashboard" width="1448" height="1086" loading="lazy"></div></div>
+          <div class="project-media"><div class="device-shell device-screen"><img src="assets/media/zevenra_luxury_fashion_e_commerce_showcase.png" alt="ZEVENRA luxury fashion storefront, shopping cart and commerce administration dashboard" width="1448" height="1086" loading="lazy"></div></div>
           <div class="project-content">
           <h3>ZEVENRA Commerce Platform</h3>
           <div class="quest-meta">Technology: React | TypeScript | Vercel</div>
@@ -5952,7 +5952,7 @@
           </div>
         </div></div>
         <div class="project-card-reveal"><div class="quest-card">
-          <div class="project-media"><div class="device-shell device-screen"><img src="supun_erp_logistics_workspace_dashboard.png" alt="Supun ERP purchasing, inventory, sales and customer balances dashboard" width="1448" height="1086" loading="lazy"></div></div>
+          <div class="project-media"><div class="device-shell device-screen"><img src="assets/media/supun_erp_logistics_workspace_dashboard.png" alt="Supun ERP purchasing, inventory, sales and customer balances dashboard" width="1448" height="1086" loading="lazy"></div></div>
           <div class="project-content">
           <h3>Supun ERP</h3>
           <div class="quest-meta">Technology: Laravel | PHP | MariaDB</div>
@@ -5973,7 +5973,7 @@
       <div class="sec-title"><span class="bracket">CAREER JOURNEY</span><h2>Professional Experience</h2></div>
       <p class="experience-intro">Professional experience focused on business analysis, process improvement, requirements gathering, and supporting digital transformation initiatives.</p>
       <article class="experience-card reveal">
-        <div class="experience-mark"><img src="supunlogo.png" width="1043" height="795" loading="lazy" alt="Supun Group of Companies logo"></div>
+        <div class="experience-mark"><img src="assets/media/supunlogo.png" width="1043" height="795" loading="lazy" alt="Supun Group of Companies logo"></div>
         <div class="experience-content">
           <span class="experience-label">INDUSTRY ROLE</span>
           <span class="experience-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i>August 2026 &ndash; Present</span>
@@ -5994,7 +5994,7 @@
       <div class="sec-title"><h2>Leadership Experience</h2></div>
       <p class="leadership-intro">A showcase of my campus leadership journey, involving team coordination, planning, communication and event execution.</p>
       <div class="leadership-gallery" data-gallery="aiesec">
-        <img class="leadership-photo is-active" src="aiesec.jpeg" alt="AIESEC team members together" width="4160" height="2341" loading="lazy"><img class="leadership-photo" src="aiesec1.png" alt="AIESEC leadership event moment" width="1280" height="720" loading="lazy">
+        <img class="leadership-photo is-active" src="assets/media/aiesec.jpeg" alt="AIESEC team members together" width="4160" height="2341" loading="lazy"><img class="leadership-photo" src="assets/media/aiesec1.png" alt="AIESEC leadership event moment" width="1280" height="720" loading="lazy">
         <div class="guild-list reveal">
           <div class="guild-item"><i class="fa-solid fa-people-group" aria-hidden="true"></i><div class="guild-rank"><span class="guild-role">OCVP Logistics</span><span class="guild-event">Elevate 26 Career Fair</span></div><p>Planned &amp; managed end-to-end logistics for a 400+ delegate event.</p></div>
           <div class="guild-item"><i class="fa-regular fa-handshake" aria-hidden="true"></i><div class="guild-rank"><span class="guild-role">OCVP Partnership Dev.</span><span class="guild-event">Christmas OEM Event</span></div><p>Led partner outreach strategy and tracked partnership deliverables.</p></div>
@@ -6005,18 +6005,18 @@
     </section>
 
     <section class="education-section reveal" id="education">
-      <video class="education-video" autoplay muted loop playsinline aria-hidden="true"><source src="video.mp4" type="video/mp4"></video>
+      <video class="education-video" autoplay muted loop playsinline aria-hidden="true"><source src="assets/media/video.mp4" type="video/mp4"></video>
       <div class="sec-title"><span class="bracket">[05]</span><h2>Academic Journey</h2><p>A clear timeline of my academic and professional learning journey.</p></div>
       <div class="level-list reveal">
-        <div class="level-item"><div class="level-badge">04</div><div class="level-logo"><img src="nibm logo.png" width="512" height="512" loading="lazy" alt="NIBM logo"></div><div class="education-details"><h3>BSc (Hons) IT for Business</h3><div class="lv-org">Coventry University, UK (via NIBM)</div><div class="lv-mods">Project Management, IT Service & Infrastructure Management, Operational Research.</div></div><div class="education-meta"><span class="lv-date">2026 – Present</span><span class="education-status">Current</span></div></div>
-        <div class="level-item"><div class="level-badge">03</div><div class="level-logo"><img src="nibm%20logo.png" width="512" height="512" loading="lazy" alt="NIBM logo"></div><div class="education-details"><h3>HND in Information Systems</h3><div class="lv-org">NIBM, Sri Lanka</div><div class="lv-mods">Agile & DevOps, Business Analysis, IT Management Practices.</div></div><div class="education-meta"><span class="lv-date">Apr 2025 – Apr 2026</span><span class="education-status">Completed</span></div></div>
-        <div class="level-item"><div class="level-badge">02</div><div class="level-logo"><img src="nibm%20logo.png" width="512" height="512" loading="lazy" alt="NIBM logo"></div><div class="education-details"><h3>Diploma in Software Engineering</h3><div class="lv-org">NIBM, Sri Lanka</div><div class="lv-mods">Software Engineering, OOP, Web Development.</div></div><div class="education-meta"><span class="lv-date">Sep 2023 – Sep 2024</span><span class="education-status">Completed</span></div></div>
-        <div class="level-item"><div class="level-badge">01</div><div class="level-logo"><img src="nibm%20logo.png" width="512" height="512" loading="lazy" alt="NIBM logo"></div><div class="education-details"><h3>Certificate in Computer Science</h3><div class="lv-org">NIBM, Sri Lanka</div></div><div class="education-meta"><span class="lv-date">Dec 2022 – May 2023</span><span class="education-status">Completed</span></div></div>
+        <div class="level-item"><div class="level-badge">04</div><div class="level-logo"><img src="assets/media/nibm logo.png" width="512" height="512" loading="lazy" alt="NIBM logo"></div><div class="education-details"><h3>BSc (Hons) IT for Business</h3><div class="lv-org">Coventry University, UK (via NIBM)</div><div class="lv-mods">Project Management, IT Service & Infrastructure Management, Operational Research.</div></div><div class="education-meta"><span class="lv-date">2026 – Present</span><span class="education-status">Current</span></div></div>
+        <div class="level-item"><div class="level-badge">03</div><div class="level-logo"><img src="assets/media/nibm%20logo.png" width="512" height="512" loading="lazy" alt="NIBM logo"></div><div class="education-details"><h3>HND in Information Systems</h3><div class="lv-org">NIBM, Sri Lanka</div><div class="lv-mods">Agile & DevOps, Business Analysis, IT Management Practices.</div></div><div class="education-meta"><span class="lv-date">Apr 2025 – Apr 2026</span><span class="education-status">Completed</span></div></div>
+        <div class="level-item"><div class="level-badge">02</div><div class="level-logo"><img src="assets/media/nibm%20logo.png" width="512" height="512" loading="lazy" alt="NIBM logo"></div><div class="education-details"><h3>Diploma in Software Engineering</h3><div class="lv-org">NIBM, Sri Lanka</div><div class="lv-mods">Software Engineering, OOP, Web Development.</div></div><div class="education-meta"><span class="lv-date">Sep 2023 – Sep 2024</span><span class="education-status">Completed</span></div></div>
+        <div class="level-item"><div class="level-badge">01</div><div class="level-logo"><img src="assets/media/nibm%20logo.png" width="512" height="512" loading="lazy" alt="NIBM logo"></div><div class="education-details"><h3>Certificate in Computer Science</h3><div class="lv-org">NIBM, Sri Lanka</div></div><div class="education-meta"><span class="lv-date">Dec 2022 – May 2023</span><span class="education-status">Completed</span></div></div>
       </div>
     </section>
 
     <section class="certifications-section" id="certifications">
-      <div class="cert-backdrop" aria-hidden="true"><img src="cer1.png" alt=""><img src="cer2.png" alt=""><img src="cer3.png" alt=""></div>
+      <div class="cert-backdrop" aria-hidden="true"><img src="assets/media/cer1.png" alt=""><img src="assets/media/cer2.png" alt=""><img src="assets/media/cer3.png" alt=""></div>
       <div class="sec-title"><span class="bracket">[06]</span><h2>Professional Certifications</h2></div>
       <div class="ach-grid reveal">
         <div class="ach"><span class="badge">&#9733;</span><span><strong>Cloud 101: Powered by AWS</strong><small>AWS Cloud Club NIBM - Issued Jan 2026</small></span></div>
@@ -6118,7 +6118,7 @@
             <a class="contact-final-btn secondary" href="https://www.linkedin.com/in/anul-methnula/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn <span aria-hidden="true">&nearr;</span></a>
           </div>
         </div>
-        <figure class="contact-final-portrait"><span class="contact-photo-frame"><img src="footer.jpg" width="4000" height="3000" alt="Anul Methnula seated outdoors wearing sunglasses and a white shirt" loading="lazy"></span></figure>
+        <figure class="contact-final-portrait"><span class="contact-photo-frame"><img src="assets/media/footer.jpg" width="4000" height="3000" alt="Anul Methnula seated outdoors wearing sunglasses and a white shirt" loading="lazy"></span></figure>
       </div>
     </section>
 
@@ -6142,7 +6142,7 @@
   const current = 'pm';
 
   function syncConnectCv(role){
-    const file = 'Anul Methnula- BA Resume.pdf';
+    const file = 'docs/resumes/Anul Methnula- BA Resume.pdf';
     const label = 'Download updated Business Analyst CV';
     connectCv.href = file;
     connectCv.download = 'Anul Methnula - Business Analyst Resume.pdf';
@@ -6350,7 +6350,7 @@
   document.querySelectorAll('.quest-grid').forEach(el=>questIO.observe(el));
 
   // ---- cinematic AIESEC leadership gallery ----
-  const leadershipPhotos=['aiesec.jpeg','aiesec1.png','aiese2.png','aiesec3.png','aiesec4.png'];
+  const leadershipPhotos=['assets/media/aiesec.jpeg','assets/media/aiesec1.png','assets/media/aiese2.png','assets/media/aiesec3.png','assets/media/aiesec4.png'];
   const leadershipSequence=[leadershipPhotos[0],...leadershipPhotos.slice(1).sort(()=>Math.random()-.5)];
   leadershipSequence.forEach(photo=>{const preload=new Image();preload.src=photo;});
   document.querySelectorAll('[data-gallery="aiesec"]').forEach(gallery=>{
@@ -6405,10 +6405,10 @@
     requestAnimationFrame(syncTimeline);
     new ResizeObserver(syncTimeline).observe(list);
   });
-  document.querySelectorAll('.level-logo img').forEach(logo=>{ logo.src = 'nibm logo.png'; });
+  document.querySelectorAll('.level-logo img').forEach(logo=>{ logo.src = 'assets/media/nibm logo.png'; });
 
   // Preload the three simultaneous certificate collage layers.
-  const certificationImages=['cer1.png','cer2.png','cer3.png'];
+  const certificationImages=['assets/media/cer1.png','assets/media/cer2.png','assets/media/cer3.png'];
   certificationImages.forEach(src=>{const image=new Image();image.src=src;});
 
   // ---- free local portfolio assistant (no API key or usage fees) ----
@@ -6495,7 +6495,7 @@
     if(/\b(experiences?|internship|intern|supun|employment|industry|roles?|job)\b/.test(q)) return chatAnswer('Professional experience','<p><strong>Business Analyst</strong><br>Supun Group of Companies, Sri Lanka<br>August 2026–Present</p><ul><li>Requirements and process analysis</li><li>Workflow and functional documentation</li><li>ERP planning and team communication</li></ul><p><a href="#experience">View experience</a></p>');
     if(/\b(education|degrees?|study|studies|academic|university|nibm|coventry|hnd|diploma)\b/.test(q)) return chatAnswer('Education','<ul><li>BSc (Hons) IT for Business — in progress</li><li>HND in Information Systems</li><li>Diploma in Software Engineering</li><li>Certificate in Computer Science</li></ul><p>Coventry University through NIBM. <a href="#education">View education</a></p>');
     if(/\b(certifications?|certificates?|aws|leanpm|english course|british council)\b/.test(q)) return chatAnswer('Certifications','<ul><li>Cloud 101 — AWS</li><li>LeanPM Yellow Belt</li><li>Certificate in Computer Science</li><li>English qualifications and courses</li></ul><p><a href="#certifications">View certifications</a></p>');
-    if(/\b(cv|cvs|resumes?|download)\b/.test(q)) return chatAnswer('Download Anul’s CV','Download the updated <a href="Anul%20Methnula-%20BA%20Resume.pdf" download="Anul Methnula - Business Analyst Resume.pdf">Business Analyst CV</a>.');
+    if(/\b(cv|cvs|resumes?|download)\b/.test(q)) return chatAnswer('Download Anul’s CV','Download the updated <a href="docs/resumes/Anul%20Methnula-%20BA%20Resume.pdf" download="Anul Methnula - Business Analyst Resume.pdf">Business Analyst CV</a>.');
     if(/\b(available|availability|start|opportunit(?:y|ies)|hire|recruit)\b/.test(q)) return chatAnswer('Open to opportunities','Anul is open to suitable <strong>Business Analyst, Project Coordinator, and junior Project Management opportunities</strong>. <a href="#contact">Contact Anul</a> to discuss a role.');
     if(/\b(contact|email|phone|call|whatsapp|linkedin|reach|location)\b/.test(q)) return chatAnswer('Contact Anul','Email <a href="mailto:anulmethnula@gmail.com">anulmethnula@gmail.com</a>, call <a href="tel:+94740529061">+94 740 529 061</a>, message through <a href="https://wa.me/94740529061" target="_blank" rel="noopener noreferrer">WhatsApp</a>, or connect on <a href="https://www.linkedin.com/in/anul-methnula/" target="_blank" rel="noopener noreferrer">LinkedIn</a>. He is based in Sri Lanka.');
     if((/\b(who|about|profile|tell me)\b/.test(q) && /\b(anuls?|him|candidate)\b/.test(q)) || /^(tell me )?about me$|who am i|tell me about myself/.test(q) || /why (hire|choose) (anul|him)/.test(q)) return chatAnswer('About Anul Methnula','<p>Anul is a <strong>Business Analyst</strong> and <strong>Project Manager</strong> based in Sri Lanka. He turns business needs into clear requirements, practical plans, and coordinated digital solutions.</p><p><strong>What he brings</strong></p><ul><li>Requirements gathering and process analysis</li><li>Stakeholder communication and documentation</li><li>Agile planning, coordination, UAT, and delivery support</li><li>Industry experience, project work, and AIESEC leadership</li></ul><p>He currently works with <strong>Supun Group of Companies</strong> and is open to suitable BA, project coordination, and junior PM opportunities. <a href="#contact">Contact Anul</a></p>');
