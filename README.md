@@ -9,11 +9,11 @@
 
 ## Portfolio Purpose
 
-This portfolio presents my work across **Business Analysis, Project Management and digital solution delivery** in a visual format designed for recruiters, interviewers and collaborators.
+This portfolio presents my work across **Frontend Development, Business Analysis and Project Management** in a visual format designed for recruiters, interviewers and collaborators.
 
 ## What You’ll Find
 
-- Selected business and digital projects
+- Selected frontend, business systems and digital projects
 - Requirements, process and workflow thinking
 - Project coordination and planning work
 - Skills, certifications and experience
@@ -35,23 +35,25 @@ This portfolio presents my work across **Business Analysis, Project Management a
 
 | Area | Example | Focus |
 |---|---|---|
+| Frontend development | [Anything at Supun](https://github.com/anulmethnula/anythingatsupun) | Responsive storefront redevelopment |
 | Business systems | CAMY / ERP projects | Requirements, workflow and operations |
+| Inventory management | [StockEasy](https://github.com/anulmethnula/stock-management-system) | Purchasing, receiving and delivery workflows |
 | Business Analysis | Online Gas Delivery | BPMN, process analysis and wireframes |
 | Project delivery | QR E-Ticketing | Coordination, Agile and requirements |
 | Leadership | AIESEC experience | Teamwork, communication and delivery |
 
 ## Core Focus
 
-| Business Analysis | Project Management | Digital Delivery |
+| Frontend Development | Business Analysis | Project Management |
 |---|---|---|
-| Requirements gathering | Planning & coordination | Solution understanding |
-| Process analysis | Milestone tracking | UI / workflow thinking |
-| Stakeholder needs | Team communication | Technical collaboration |
-| BPMN / UML | Agile & Scrum | Continuous improvement |
+| Responsive interfaces | Requirements gathering | Planning & coordination |
+| React & TypeScript | Process analysis | Milestone tracking |
+| UI components | Stakeholder needs | Team communication |
+| Testing & refinement | BPMN / UML | Agile & Scrum |
 
 ## Why This Portfolio Exists
 
-The goal is not only to show finished screens. It shows **how I understand business problems, structure requirements, communicate workflows and support digital delivery**.
+The goal is to show how I understand business problems, translate requirements into usable interfaces, and support project delivery.
 
 ## Run Locally
 
@@ -63,4 +65,4 @@ This repository currently includes my [**Business Analysis resume**](docs/resume
 
 ---
 
-<p align="center"><b>Understand the problem → define the need → coordinate delivery → improve the result.</b></p>
+<p align="center"><b>Understand → analyse → design → develop → test → deliver.</b></p>
